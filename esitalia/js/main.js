@@ -86,7 +86,7 @@
   counters.forEach((el) => counterObserver.observe(el));
 
   /* ---------- Active nav link on scroll ---------- */
-  const sections = ['home', 'products', 'brands', 'about', 'contact']
+  const sections = ['home', 'about', 'products', 'certifications', 'work', 'news', 'contact']
     .map((id) => document.getElementById(id))
     .filter(Boolean);
   const navLinks = document.querySelectorAll('[data-nav]');
