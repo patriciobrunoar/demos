@@ -7,7 +7,7 @@
 <meta name="description" content="Scalabros designs, manufactures and distributes technical components for buses, motorhomes, agricultural and special vehicles. Founded 2008, Valsamoggia (BO), Italy. ISO 9001:2015 certified." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -16,17 +16,6 @@
 <div class="progress-bar" id="progressBar"></div>
 <div class="noise" aria-hidden="true"></div>
 <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
-
-<!-- ================= UTILITY BAR ================= -->
-<div class="utility-bar">
-  <div class="container utility-inner">
-    <span class="utility-tag">VALSAMOGGIA (BO) ITALY — EST. 2008</span>
-    <div class="utility-contact">
-      <a href="tel:+39051832587">+39 051 83 25 87</a>
-      <a href="mailto:info@scalabros.it">info@scalabros.it</a>
-    </div>
-  </div>
-</div>
 
 <!-- ================= NAV ================= -->
 <header class="nav" id="nav">
@@ -38,7 +27,7 @@
     <nav class="nav-links" id="navLinks">
       <a href="#home" data-nav>Home</a>
       <a href="#about" data-nav>About</a>
-      <a href="#sectors" data-nav>Sectors</a>
+      <a href="#segments" data-nav>Sectors</a>
       <a href="#products" data-nav>Products</a>
       <a href="#innovation" data-nav>Innovation</a>
       <a href="#team" data-nav>Team</a>
@@ -57,38 +46,34 @@
 
   <!-- ================= HERO ================= -->
   <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow reveal">Valsamoggia, Bologna · Since 2008</p>
-        <h1 class="hero-title">
-          <span class="reveal" style="--d:0">Components for the mobility</span>
-          <span class="reveal accent-text" style="--d:1">of today and tomorrow.</span>
-        </h1>
-        <p class="hero-sub reveal" style="--d:2">
-          Specialized applications for buses, R.V. vehicles, agricultural and special vehicles —
-          engineered, manufactured and distributed from our facility in Italy.
-        </p>
-        <div class="hero-cta reveal" style="--d:3">
-          <a href="#products" class="btn btn-primary magnetic"><span>Our Products</span></a>
-          <a href="#sectors" class="btn btn-ghost magnetic"><span>Application Sectors</span></a>
-        </div>
-        <div class="hero-facts reveal" style="--d:4">
-          <div class="fact"><strong>2008</strong><span>Founded</span></div>
-          <div class="fact"><strong>ISO 9001</strong><span>:2015 Certified</span></div>
-          <div class="fact"><strong>IT + US</strong><span>Manufacturing &amp; Sales</span></div>
-        </div>
-      </div>
+    <div class="hero-media" aria-hidden="true" data-media>
+      <img src="assets/scalabros-revolutionary-bus-and-rv-components-componenti-su-misura.webp" alt="" loading="eager" data-speed="0.04" />
+    </div>
+    <div class="hero-media-overlay"></div>
 
-      <div class="hero-visual reveal-right" style="--d:2">
-        <div class="hero-photo-frame chamfer chamfer-shadow" data-speed="0.05" data-media>
-          <img src="assets/Scalabros-spartacos-revolutionary-autobus-components.webp" alt="Scalabros at a bus trade fair, next to a full-size double-decker bus" loading="eager" />
-        </div>
-        <div class="hero-spec-card chamfer-sm">
-          <div class="spec"><strong>ECE/UN R107</strong><span>&amp; R118 Compliant</span></div>
-          <div class="spec"><strong>18+ yrs</strong><span>Engineering Mobility</span></div>
-        </div>
+    <div class="container hero-inner">
+      <p class="eyebrow reveal">Valsamoggia, Bologna · Since 2008</p>
+      <h1 class="hero-title">
+        <span class="reveal" style="--d:0">Components for the mobility</span>
+        <span class="reveal accent-text" style="--d:1">of today and tomorrow.</span>
+      </h1>
+      <p class="hero-sub reveal" style="--d:2">
+        Specialized applications for buses, R.V. vehicles, agricultural and special vehicles —
+        engineered, manufactured and distributed from our facility in Italy.
+      </p>
+      <div class="hero-cta reveal" style="--d:3">
+        <a href="#products" class="btn btn-primary magnetic"><span>Our Products</span></a>
+        <a href="#segments" class="btn btn-ghost-light magnetic"><span>Application Sectors</span></a>
+      </div>
+      <div class="hero-facts reveal" style="--d:4">
+        <div class="fact"><strong>2008</strong><span>Founded</span></div>
+        <div class="fact"><strong>ISO 9001:2015</strong><span>Certified</span></div>
+        <div class="fact"><strong>Italy + USA</strong><span>Manufacturing &amp; Sales</span></div>
+        <div class="fact"><strong>18+ yrs</strong><span>Engineering Mobility</span></div>
       </div>
     </div>
+
+    <a href="#marquee" class="scroll-cue" aria-label="Scroll down"><span></span></a>
   </section>
 
   <!-- ================= MARQUEE ================= -->
@@ -110,14 +95,8 @@
   <!-- ================= ABOUT ================= -->
   <section class="about" id="about">
     <div class="container about-grid">
-      <div class="about-visual reveal-left">
-        <div class="main-photo chamfer chamfer-shadow" data-speed="0.06" data-media>
-          <img src="assets/scalabros-team.webp" alt="The Scalabros team at the production facility" loading="lazy" />
-        </div>
-        <div class="inset-card">
-          <img src="assets/scalabros-prodotti-e-componenti-per-veicoli-e-mezzi-speciali.webp" alt="Scalabros trade-show booth, Revolutionary Bus Components" loading="lazy" />
-          <p class="inset-caption mono">Founded by <b>twin brothers</b> Giovanni &amp; Benedetto Scalabrini, 2008.</p>
-        </div>
+      <div class="about-visual chamfer chamfer-shadow reveal-left" data-speed="0.06" data-media>
+        <img src="assets/scalabros-prodotti-e-componenti-per-veicoli-e-mezzi-speciali.webp" alt="Scalabros trade-show booth, Revolutionary Bus Components" loading="lazy" />
       </div>
       <div class="about-copy reveal-right" style="--d:1">
         <p class="eyebrow reveal">About Us</p>
@@ -166,22 +145,22 @@
       <h2 class="section-title reveal center">Every stage, engineered in Italy.</h2>
 
       <div class="values-list">
-        <div class="value-row reveal">
+        <div class="value-row reveal-left">
           <span class="num-tag">01</span>
           <h4>ISO 9001:2015</h4>
           <p>Certified quality management governs every stage, from material research to finished part.</p>
         </div>
-        <div class="value-row reveal" style="--d:1">
+        <div class="value-row reveal-right" style="--d:1">
           <span class="num-tag">02</span>
           <h4>100% Italian Manufacturing</h4>
           <p>Design, tooling and production stay in Valsamoggia, Bologna — custom-built to millimetric precision.</p>
         </div>
-        <div class="value-row reveal" style="--d:2">
+        <div class="value-row reveal-left" style="--d:2">
           <span class="num-tag">03</span>
           <h4>In-House R&amp;D</h4>
           <p>A dedicated design and technical team develops new solutions every year, in-house.</p>
         </div>
-        <div class="value-row reveal" style="--d:3">
+        <div class="value-row reveal-right" style="--d:3">
           <span class="num-tag">04</span>
           <h4>Italy + USA</h4>
           <p>Scalabros North America Inc. extends our sun blinds and emergency hatch lines across the U.S.</p>
@@ -190,76 +169,118 @@
     </div>
   </section>
 
-  <!-- ================= SECTORS ================= -->
-  <section class="sectors" id="sectors">
+  <!-- ================= MARKET SEGMENTS ================= -->
+  <section class="segments-intro" id="segments">
     <div class="container">
       <p class="eyebrow reveal center">Market Segments</p>
       <h2 class="section-title reveal center">Solutions for every type of vehicle.</h2>
-      <p class="section-sub reveal center">Engineered and built in Italy for land and marine mobility — every sector brings its own
-      design challenges, and we handle them with dedicated expertise.</p>
-
-      <div class="sector-scroller-wrap reveal">
-        <div class="sector-controls">
-          <button class="scroller-btn" id="sectorPrev" aria-label="Scroll left"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <button class="scroller-btn" id="sectorNext" aria-label="Scroll right"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        </div>
-        <div class="sector-scroller" id="sectorScroller">
-          <a href="#contact" class="sector-card" data-sector>
-            <span class="num-tag mono">01</span>
-            <img src="assets/autobus-e-minibus.webp" alt="Urban bus representing the buses and minibuses sector" loading="lazy" />
-            <div class="sector-card-body">
-              <h3>Buses &amp; Minibuses</h3>
-              <p>Sun blinds, emergency and roof ventilation hatches, LED ceiling lights — ECE/UN R107 &amp; R118 compliant.</p>
-            </div>
-          </a>
-          <a href="#contact" class="sector-card" data-sector>
-            <span class="num-tag mono">02</span>
-            <img src="assets/veicoli-agricoli-e-speciali.webp" alt="Agricultural machinery representing the agricultural and special vehicles sector" loading="lazy" />
-            <div class="sector-card-body">
-              <h3>Agricultural &amp; Special Vehicles</h3>
-              <p>Sun visors, hatches and ventilation systems for tractors, earthmovers, trucks and emergency vehicles.</p>
-            </div>
-          </a>
-          <a href="#contact" class="sector-card" data-sector>
-            <span class="num-tag mono">03</span>
-            <img src="assets/camper-e-veicoli-ricreazionali.webp" alt="Motorhome representing the recreational vehicles sector" loading="lazy" />
-            <div class="sector-card-body">
-              <h3>Motorhomes &amp; RVs</h3>
-              <p>Blackout blinds, mosquito screens and sun visors for campers, vans and RVs.</p>
-            </div>
-          </a>
-          <a href="#contact" class="sector-card" data-sector>
-            <span class="num-tag mono">04</span>
-            <img src="assets/gru-e-movimento-terra.webp" alt="Excavator representing the cranes and earth-moving machinery sector" loading="lazy" />
-            <div class="sector-card-body">
-              <h3>Cranes &amp; Earth-Moving</h3>
-              <p>Roller blinds, sun visors, fans and LED lighting built for impact and vibration resistance.</p>
-            </div>
-          </a>
-          <a href="#contact" class="sector-card" data-sector>
-            <span class="num-tag mono">05</span>
-            <img src="assets/settore-nautico.webp" alt="Yachts representing the marine sector" loading="lazy" />
-            <div class="sector-card-body">
-              <h3>Marine — Boats &amp; Yachts</h3>
-              <p>Manual or electric blackout blinds for boats, yachts and ferries, engineered for marine conditions.</p>
-            </div>
-          </a>
-          <a href="#contact" class="sector-card" data-sector>
-            <span class="num-tag mono">06</span>
-            <img src="assets/settore-ferroviario.webp" alt="High-speed train representing the rail transport sector" loading="lazy" />
-            <div class="sector-card-body">
-              <h3>Rail Transport</h3>
-              <p>Certified blackout roller blinds, hatches and ventilation for trains, trams and subway systems.</p>
-            </div>
-          </a>
-        </div>
-        <div class="scroller-dots" id="sectorDots" aria-hidden="true"></div>
-      </div>
+      <p class="section-sub reveal center">Engineered and built in Italy for land and marine mobility — every sector brings its
+      own design challenges, and we handle them with dedicated expertise.</p>
     </div>
   </section>
 
+  <div class="segment">
+    <div class="container segment-grid">
+      <div class="segment-copy reveal-left">
+        <span class="segment-num" aria-hidden="true">01</span>
+        <p class="eyebrow">Buses &amp; Minibuses</p>
+        <h3>Public and private transport, built for the daily route.</h3>
+        <p>Sun blinds, emergency and roof ventilation hatches, and LED ceiling lights engineered for
+        urban, tourist and electric buses and minibuses — every component compliant with ECE/UN R107
+        &amp; R118, and built to withstand the wear of daily service.</p>
+        <a href="#contact" class="btn btn-ghost magnetic"><span>Request Information</span></a>
+      </div>
+      <div class="segment-visual chamfer chamfer-shadow reveal-right" style="--d:1" data-speed="0.05">
+        <img src="assets/autobus-e-minibus.webp" alt="Urban bus representing the buses and minibuses sector" loading="lazy" />
+      </div>
+    </div>
+  </div>
+
+  <div class="segment flip">
+    <div class="container segment-grid">
+      <div class="segment-copy reveal-right">
+        <span class="segment-num" aria-hidden="true">02</span>
+        <p class="eyebrow">Agricultural &amp; Special Vehicles</p>
+        <h3>Built for tractors, earthmovers and everything in between.</h3>
+        <p>Sun visors, hatches and ventilation systems engineered for tractors, earth-moving machinery,
+        trucks and emergency vehicles — manual or electric, custom-built to the cabin and the conditions
+        the vehicle actually works in.</p>
+        <a href="#contact" class="btn btn-ghost magnetic"><span>Request Information</span></a>
+      </div>
+      <div class="segment-visual chamfer chamfer-shadow reveal-left" style="--d:1" data-speed="0.05">
+        <img src="assets/veicoli-agricoli-e-speciali.webp" alt="Agricultural machinery representing the agricultural and special vehicles sector" loading="lazy" />
+      </div>
+    </div>
+  </div>
+
+  <div class="segment">
+    <div class="container segment-grid">
+      <div class="segment-copy reveal-left">
+        <span class="segment-num" aria-hidden="true">03</span>
+        <p class="eyebrow">Motorhomes &amp; RVs</p>
+        <h3>Comfort and privacy for life on the move.</h3>
+        <p>Blackout blinds, mosquito screens and sun visors for campers, vans and RVs — designed around
+        comfort, privacy and energy efficiency for owners who spend as much time on the road as they do
+        at home.</p>
+        <a href="#contact" class="btn btn-ghost magnetic"><span>Request Information</span></a>
+      </div>
+      <div class="segment-visual chamfer chamfer-shadow reveal-right" style="--d:1" data-speed="0.05">
+        <img src="assets/camper-e-veicoli-ricreazionali.webp" alt="Motorhome representing the recreational vehicles sector" loading="lazy" />
+      </div>
+    </div>
+  </div>
+
+  <div class="segment flip">
+    <div class="container segment-grid">
+      <div class="segment-copy reveal-right">
+        <span class="segment-num" aria-hidden="true">04</span>
+        <p class="eyebrow">Cranes &amp; Earth-Moving</p>
+        <h3>Engineered for impact, vibration and long shifts.</h3>
+        <p>Roller blinds, sun visors, fans and LED lighting for crane and earthmover cabins — built to
+        keep working through the vibration, dust and impact that come standard on a job site.</p>
+        <a href="#contact" class="btn btn-ghost magnetic"><span>Request Information</span></a>
+      </div>
+      <div class="segment-visual chamfer chamfer-shadow reveal-left" style="--d:1" data-speed="0.05">
+        <img src="assets/gru-e-movimento-terra.webp" alt="Excavator representing the cranes and earth-moving machinery sector" loading="lazy" />
+      </div>
+    </div>
+  </div>
+
+  <div class="segment">
+    <div class="container segment-grid">
+      <div class="segment-copy reveal-left">
+        <span class="segment-num" aria-hidden="true">05</span>
+        <p class="eyebrow">Marine — Boats &amp; Yachts</p>
+        <h3>Engineered for salt air and open water.</h3>
+        <p>Manual or electric blackout blinds for boats, yachts and ferries, built with marine-grade
+        materials and hardware that hold up to humidity, UV exposure and constant motion.</p>
+        <a href="#contact" class="btn btn-ghost magnetic"><span>Request Information</span></a>
+      </div>
+      <div class="segment-visual chamfer chamfer-shadow reveal-right" style="--d:1" data-speed="0.05">
+        <img src="assets/settore-nautico.webp" alt="Yachts representing the marine sector" loading="lazy" />
+      </div>
+    </div>
+  </div>
+
+  <div class="segment flip">
+    <div class="container segment-grid">
+      <div class="segment-copy reveal-right">
+        <span class="segment-num" aria-hidden="true">06</span>
+        <p class="eyebrow">Rail Transport</p>
+        <h3>Certified for trains, trams and subway systems.</h3>
+        <p>Certified blackout roller blinds, hatches and ventilation systems built with fire-resistant
+        materials, meeting the stricter safety standards that rail transport demands.</p>
+        <a href="#contact" class="btn btn-ghost magnetic"><span>Request Information</span></a>
+      </div>
+      <div class="segment-visual chamfer chamfer-shadow reveal-left" style="--d:1" data-speed="0.05">
+        <img src="assets/settore-ferroviario.webp" alt="High-speed train representing the rail transport sector" loading="lazy" />
+      </div>
+    </div>
+  </div>
+
   <!-- ================= PRODUCTS ================= -->
   <section class="products" id="products">
+    <div class="ambient" aria-hidden="true"><span class="g1" style="top:-8%; left:20%;"></span><span class="g2" style="bottom:-10%; right:10%;"></span></div>
     <div class="container">
       <p class="eyebrow reveal center">What We Build</p>
       <h2 class="section-title reveal center">Components for industrial &amp; transport vehicles.</h2>
@@ -268,84 +289,75 @@
 
       <div class="tile-grid products-grid">
         <a href="#contact" class="tile reveal">
-          <span class="num-tag">01</span>
           <div class="tile-photo"><img src="assets/autobus-di-linea-con-tendine-parasole-Scalabros.webp" alt="Scalabros sun blinds lowered inside a city bus" loading="lazy" /></div>
           <div class="tile-body">
             <h3>Sun Blinds &amp; Blackout Systems</h3>
             <p>Manual or electric, custom-built per vehicle, using certified blackout fabric tested to ECE/UN R118. Electric versions auto-adjust to light conditions.</p>
-            <span class="tile-cta">Learn more →</span>
+            <svg class="tile-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
         </a>
         <a href="#contact" class="tile reveal" style="--d:1">
-          <span class="num-tag">02</span>
           <div class="tile-photo"><img src="assets/botole-emergenza-e-ventilazione-a-tetto-scalabros.webp" alt="Scalabros emergency roof hatch" loading="lazy" /></div>
           <div class="tile-body">
             <h3>Emergency Hatches &amp; Roof Ventilation</h3>
             <p>PMMA, ABS and polycarbonate hatches compliant with ECE R107, opening up to 14cm — manual or electric.</p>
-            <span class="tile-cta">Learn more →</span>
+            <svg class="tile-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
         </a>
         <a href="#contact" class="tile reveal" style="--d:2">
-          <span class="num-tag">03</span>
           <div class="tile-photo"><img src="assets/ventilatori-a-tetto-scalabros.webp" alt="Scalabros roof ventilation fan" loading="lazy" /></div>
           <div class="tile-body">
             <h3>Roof Fans</h3>
             <p>12V/24V roof-mounted ventilation with configurable diffusers, snow filters and EMC-approved motors.</p>
-            <span class="tile-cta">Learn more →</span>
+            <svg class="tile-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
         </a>
         <a href="#contact" class="tile reveal" style="--d:3">
-          <span class="num-tag">04</span>
           <div class="tile-photo"><img src="assets/tendine-plissettate-scalabros.webp" alt="Scalabros pleated blind" loading="lazy" /></div>
           <div class="tile-body">
             <h3>Pleated &amp; Blackout Blinds</h3>
             <p>Aluminum-framed pleated blinds with single or double (filtering/blackout) fabric, sized to your windows and skylights.</p>
-            <span class="tile-cta">Learn more →</span>
+            <svg class="tile-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
         </a>
         <a href="#contact" class="tile reveal" style="--d:4">
-          <span class="num-tag">05</span>
           <div class="tile-photo"><img src="assets/pantine-e-alette-parasole-scalabros-1.webp" alt="Scalabros sun visor panel" loading="lazy" /></div>
           <div class="tile-body">
             <h3>Sun Visors &amp; Sunshade Panels</h3>
             <p>PVC and translucent visors for agricultural, industrial and earth-moving cabins — custom size, angle and color.</p>
-            <span class="tile-cta">Learn more →</span>
+            <svg class="tile-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
         </a>
         <a href="#contact" class="tile reveal" style="--d:5">
-          <span class="num-tag">06</span>
           <div class="tile-photo"><img src="assets/illuminazione-a-led-scalabros.webp" alt="Scalabros LED ceiling light" loading="lazy" /></div>
           <div class="tile-body">
             <h3>LED Lighting</h3>
             <p>Interior, ceiling, spotlight and emergency LED lighting rated 50,000+ hours — white, blue or custom colors.</p>
-            <span class="tile-cta">Learn more →</span>
+            <svg class="tile-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
         </a>
         <a href="#contact" class="tile reveal" style="--d:6">
-          <span class="num-tag">07</span>
           <div class="tile-photo"><img src="assets/prese-usb-scalabros.webp" alt="Scalabros USB charging socket" loading="lazy" /></div>
           <div class="tile-body">
             <h3>USB Sockets &amp; Chargers</h3>
             <p>12V/24V, 1–2 port charging units in self-extinguishing ABS housings with overload and reverse-polarity protection.</p>
-            <span class="tile-cta">Learn more →</span>
+            <svg class="tile-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
         </a>
         <a href="#contact" class="tile reveal" style="--d:7">
-          <span class="num-tag">08</span>
           <div class="tile-photo no-photo"><svg viewBox="0 0 48 48" width="40" height="40"><circle cx="24" cy="24" r="10" stroke="#006768" stroke-width="2.2" fill="none"/><circle cx="24" cy="24" r="16" stroke="#f9ae00" stroke-width="1.6" fill="none" stroke-dasharray="2 5"/></svg></div>
           <div class="tile-body">
             <h3>Capacitive Buttons</h3>
             <p>Touch-sensitive stop-request and control buttons (9–32V), UV-resistant ABS, LED-backlit symbols.</p>
-            <span class="tile-cta">Learn more →</span>
+            <svg class="tile-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
         </a>
         <a href="https://vignal-group.com" target="_blank" rel="noopener" class="tile reveal" style="--d:8">
-          <span class="num-tag">09</span>
           <div class="tile-photo no-photo"><svg viewBox="0 0 48 48" width="40" height="40"><circle cx="24" cy="24" r="15" stroke="#006768" stroke-width="2.2" fill="none"/><path d="M24 15v9l6 4" stroke="#f9ae00" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <div class="tile-body">
             <h3>AVAS &amp; LED Clocks</h3>
             <p>Distributed line — Scalabros is an official distributor of Vignal Group–Sesaly systems.</p>
-            <span class="tile-cta">Discover Vignal Group ↗</span>
+            <svg class="tile-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
         </a>
       </div>
@@ -422,40 +434,29 @@
 
   <!-- ================= TEAM ================= -->
   <section class="team" id="team">
-    <div class="container">
-      <p class="eyebrow reveal center">Meet the Team</p>
-      <h2 class="section-title reveal center">The people behind every part.</h2>
+    <div class="team-banner" data-media>
+      <img src="assets/scalabros-team.webp" alt="The Scalabros team at the production facility" loading="lazy" data-speed="0.04" />
+      <div class="team-banner-copy reveal">
+        <p class="eyebrow on-dark">Meet the Team</p>
+        <h2>25+ people, one engineering standard.</h2>
+      </div>
     </div>
 
-    <div class="team-track-wrap reveal">
-      <div class="team-track" id="teamTrack">
-        <a href="mailto:giovanni@scalabros.it" class="member"><span class="avatar">GS</span><span><strong>Giovanni Scalabrini</strong><span>General Manager</span></span></a>
-        <a href="mailto:benedetto@scalabros.it" class="member"><span class="avatar">BS</span><span><strong>Benedetto Scalabrini</strong><span>Sales &amp; Marketing Manager</span></span></a>
-        <a href="mailto:giovanna@scalabros.it" class="member"><span class="avatar">GI</span><span><strong>Giovanna Iudice</strong><span>Administration Manager</span></span></a>
-        <a href="mailto:salvatore@scalabros.it" class="member"><span class="avatar">SD</span><span><strong>Salvatore Di Donna</strong><span>Production Manager</span></span></a>
-        <a href="mailto:danilo@scalabros.it" class="member"><span class="avatar">DP</span><span><strong>Danilo Pieramici</strong><span>R&amp;D Designer</span></span></a>
-        <a href="mailto:filippo@scalabros.it" class="member"><span class="avatar">FD</span><span><strong>Filippo De Simone</strong><span>R&amp;D Designer</span></span></a>
-        <a href="mailto:armando@scalabros.it" class="member"><span class="avatar">AE</span><span><strong>Armando Esposito</strong><span>R&amp;D Designer</span></span></a>
-        <a href="mailto:pastore@scalabros.it" class="member"><span class="avatar">FP</span><span><strong>Francesco Pastore</strong><span>Quality Manager</span></span></a>
-        <a href="mailto:zaccherini@scalabros.it" class="member"><span class="avatar">GZ</span><span><strong>Giovanni Zaccherini</strong><span>C.Q. Quality Controller</span></span></a>
-        <a href="mailto:francesca@scalabros.it" class="member"><span class="avatar">FR</span><span><strong>Francesca Righi</strong><span>Sales Area Manager</span></span></a>
-        <a href="mailto:anja@scalabros.it" class="member"><span class="avatar">AD</span><span><strong>Anja Duvnjak</strong><span>Customer Care</span></span></a>
-        <a href="mailto:stefania@scalabros.it" class="member"><span class="avatar">SD</span><span><strong>Stefania D&rsquo;Ascoli</strong><span>Sales &amp; Bookkeeping</span></span></a>
-        <a href="mailto:giada@scalabros.it" class="member"><span class="avatar">GV</span><span><strong>Giada Venturi</strong><span>Purchasing Assistant</span></span></a>
-        <!-- duplicated for seamless marquee loop -->
-        <a href="mailto:giovanni@scalabros.it" class="member" aria-hidden="true"><span class="avatar">GS</span><span><strong>Giovanni Scalabrini</strong><span>General Manager</span></span></a>
-        <a href="mailto:benedetto@scalabros.it" class="member" aria-hidden="true"><span class="avatar">BS</span><span><strong>Benedetto Scalabrini</strong><span>Sales &amp; Marketing Manager</span></span></a>
-        <a href="mailto:giovanna@scalabros.it" class="member" aria-hidden="true"><span class="avatar">GI</span><span><strong>Giovanna Iudice</strong><span>Administration Manager</span></span></a>
-        <a href="mailto:salvatore@scalabros.it" class="member" aria-hidden="true"><span class="avatar">SD</span><span><strong>Salvatore Di Donna</strong><span>Production Manager</span></span></a>
-        <a href="mailto:danilo@scalabros.it" class="member" aria-hidden="true"><span class="avatar">DP</span><span><strong>Danilo Pieramici</strong><span>R&amp;D Designer</span></span></a>
-        <a href="mailto:filippo@scalabros.it" class="member" aria-hidden="true"><span class="avatar">FD</span><span><strong>Filippo De Simone</strong><span>R&amp;D Designer</span></span></a>
-        <a href="mailto:armando@scalabros.it" class="member" aria-hidden="true"><span class="avatar">AE</span><span><strong>Armando Esposito</strong><span>R&amp;D Designer</span></span></a>
-        <a href="mailto:pastore@scalabros.it" class="member" aria-hidden="true"><span class="avatar">FP</span><span><strong>Francesco Pastore</strong><span>Quality Manager</span></span></a>
-        <a href="mailto:zaccherini@scalabros.it" class="member" aria-hidden="true"><span class="avatar">GZ</span><span><strong>Giovanni Zaccherini</strong><span>C.Q. Quality Controller</span></span></a>
-        <a href="mailto:francesca@scalabros.it" class="member" aria-hidden="true"><span class="avatar">FR</span><span><strong>Francesca Righi</strong><span>Sales Area Manager</span></span></a>
-        <a href="mailto:anja@scalabros.it" class="member" aria-hidden="true"><span class="avatar">AD</span><span><strong>Anja Duvnjak</strong><span>Customer Care</span></span></a>
-        <a href="mailto:stefania@scalabros.it" class="member" aria-hidden="true"><span class="avatar">SD</span><span><strong>Stefania D&rsquo;Ascoli</strong><span>Sales &amp; Bookkeeping</span></span></a>
-        <a href="mailto:giada@scalabros.it" class="member" aria-hidden="true"><span class="avatar">GV</span><span><strong>Giada Venturi</strong><span>Purchasing Assistant</span></span></a>
+    <div class="container">
+      <div class="roster reveal">
+        <div class="roster-item"><strong>Giovanni Scalabrini</strong><span>General Manager</span></div>
+        <div class="roster-item"><strong>Benedetto Scalabrini</strong><span>Sales &amp; Marketing Manager</span></div>
+        <div class="roster-item"><strong>Giovanna Iudice</strong><span>Administration Manager</span></div>
+        <div class="roster-item"><strong>Salvatore Di Donna</strong><span>Production Manager</span></div>
+        <div class="roster-item"><strong>Danilo Pieramici</strong><span>R&amp;D Designer</span></div>
+        <div class="roster-item"><strong>Filippo De Simone</strong><span>R&amp;D Designer</span></div>
+        <div class="roster-item"><strong>Armando Esposito</strong><span>R&amp;D Designer</span></div>
+        <div class="roster-item"><strong>Francesco Pastore</strong><span>Quality Manager</span></div>
+        <div class="roster-item"><strong>Giovanni Zaccherini</strong><span>C.Q. Quality Controller</span></div>
+        <div class="roster-item"><strong>Francesca Righi</strong><span>Sales Area Manager</span></div>
+        <div class="roster-item"><strong>Anja Duvnjak</strong><span>Customer Care</span></div>
+        <div class="roster-item"><strong>Stefania D&rsquo;Ascoli</strong><span>Sales &amp; Bookkeeping</span></div>
+        <div class="roster-item"><strong>Giada Venturi</strong><span>Purchasing Assistant</span></div>
       </div>
     </div>
   </section>
@@ -463,7 +464,7 @@
   <!-- ================= CTA BANNER ================= -->
   <section class="cta-banner">
     <div class="cta-media" aria-hidden="true" data-media>
-      <img src="assets/scalabros-revolutionary-bus-and-rv-components-componenti-su-misura.webp" alt="" loading="lazy" />
+      <img src="assets/Scalabros-spartacos-revolutionary-autobus-components.webp" alt="" loading="lazy" />
     </div>
     <div class="cta-inner container reveal">
       <h2>Ready to engineer your next component?</h2>
@@ -474,6 +475,7 @@
 
   <!-- ================= CONTACT ================= -->
   <section class="contact" id="contact">
+    <div class="ambient" aria-hidden="true"><span class="g1" style="top:-10%; right:-6%;"></span><span class="g2" style="bottom:-12%; left:16%;"></span></div>
     <div class="container contact-grid">
       <div class="contact-info reveal-left">
         <p class="eyebrow">Contacts</p>
@@ -528,12 +530,12 @@
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="container footer-inner">
-    <a href="#home" class="logo">
-      <span class="logo-word">SCALABROS</span>
+    <a href="#home" class="logo chamfer-sm" data-media>
+      <img src="assets/logo-scalabros.webp" alt="Scalabros" class="logo-img" data-fallback-text="SCALABROS" />
     </a>
     <nav class="footer-links">
       <a href="#about">About</a>
-      <a href="#sectors">Sectors</a>
+      <a href="#segments">Sectors</a>
       <a href="#products">Products</a>
       <a href="#innovation">Innovation</a>
       <a href="#team">Team</a>

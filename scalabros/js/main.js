@@ -92,7 +92,7 @@
     }
     requestAnimationFrame(loop);
 
-    document.querySelectorAll('a, button, .tile, .sector-card, .member').forEach((el) => {
+    document.querySelectorAll('a, button, .tile, .segment-visual, .roster-item').forEach((el) => {
       el.addEventListener('mouseenter', () => ring.classList.add('is-hover'));
       el.addEventListener('mouseleave', () => ring.classList.remove('is-hover'));
     });
@@ -136,38 +136,8 @@
   }, { threshold: 0.5 });
   counters.forEach((el) => counterObserver.observe(el));
 
-  /* ---------- Sector horizontal scroller ---------- */
-  const scroller = document.getElementById('sectorScroller');
-  const dotsWrap = document.getElementById('sectorDots');
-  if (scroller && dotsWrap) {
-    const cards = Array.from(scroller.querySelectorAll('[data-sector]'));
-    cards.forEach((_, i) => {
-      const dot = document.createElement('span');
-      if (i === 0) dot.classList.add('active');
-      dotsWrap.appendChild(dot);
-    });
-    const dots = Array.from(dotsWrap.children);
-
-    const cardObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
-          const idx = cards.indexOf(entry.target);
-          dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-        }
-      });
-    }, { root: scroller, threshold: [0.6] });
-    cards.forEach((c) => cardObserver.observe(c));
-
-    document.getElementById('sectorPrev')?.addEventListener('click', () => {
-      scroller.scrollBy({ left: -340, behavior: reducedMotion ? 'auto' : 'smooth' });
-    });
-    document.getElementById('sectorNext')?.addEventListener('click', () => {
-      scroller.scrollBy({ left: 340, behavior: reducedMotion ? 'auto' : 'smooth' });
-    });
-  }
-
   /* ---------- Active nav link on scroll ---------- */
-  const sections = ['home', 'about', 'sectors', 'products', 'innovation', 'team', 'contact']
+  const sections = ['home', 'about', 'segments', 'products', 'innovation', 'team', 'contact']
     .map((id) => document.getElementById(id))
     .filter(Boolean);
   const navLinks = document.querySelectorAll('[data-nav]');
