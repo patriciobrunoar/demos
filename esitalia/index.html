@@ -63,23 +63,9 @@
 
   <!-- ================= HERO ================= -->
   <section class="hero">
-    <div class="hero-bg" aria-hidden="true">
-      <div class="blob blob-1" data-speed="0.15"></div>
-      <div class="blob blob-2" data-speed="0.28"></div>
-      <svg class="hero-lines" data-speed="0.12" viewBox="0 0 800 800" preserveAspectRatio="none" aria-hidden="true">
-        <g class="coil" stroke="#3c5fa0" stroke-width="1.4" fill="none" opacity="0.3">
-          <path d="M650 40 C 560 90, 740 150, 650 200 C 560 250, 740 310, 650 360 C 560 410, 740 470, 650 520 C 560 570, 740 630, 650 680" />
-        </g>
-        <g class="grid-lines" stroke="#213a6b" stroke-width="0.5" opacity="0.06">
-          <line x1="0" y1="120" x2="800" y2="120"/>
-          <line x1="0" y1="320" x2="800" y2="320"/>
-          <line x1="0" y1="520" x2="800" y2="520"/>
-          <line x1="0" y1="720" x2="800" y2="720"/>
-        </g>
-      </svg>
-      <div class="hero-photo" data-speed="0.1">
-        <img src="Assets/esiitalia-montaggio.jpg" alt="ESI Italia technician assembling an air suspension component" loading="eager" />
-      </div>
+    <div class="hero-media" data-speed="0.15" aria-hidden="true">
+      <img src="Assets/esiitalia-montaggio.jpg" alt="" loading="eager" />
+      <div class="hero-media-overlay"></div>
     </div>
 
     <div class="container hero-inner">
@@ -95,25 +81,27 @@
       </p>
       <div class="hero-cta reveal" style="--d:3">
         <a href="#products" class="btn btn-primary magnetic"><span>Explore Our Products</span></a>
-        <a href="#contact" class="btn btn-ghost magnetic"><span>Request a Consultation</span></a>
+        <a href="#contact" class="btn btn-ghost-light magnetic"><span>Request a Consultation</span></a>
       </div>
-    </div>
 
-    <div class="hero-chips" aria-hidden="true">
-      <div class="chip chip-1" data-speed="0.2">
-        <strong>1000+</strong><span>Projects Delivered</span>
-      </div>
-      <div class="chip chip-2" data-speed="0.35">
-        <strong>200,000+</strong><span>Products Sold</span>
-      </div>
-      <div class="chip chip-3" data-speed="0.12">
-        <strong>ISO 9001</strong><span>Certified Quality</span>
+      <div class="hero-chips reveal" style="--d:4">
+        <div class="chip"><strong>1000+</strong><span>Projects Delivered</span></div>
+        <div class="chip"><strong>200,000+</strong><span>Products Sold</span></div>
+        <div class="chip"><strong>ISO 9001</strong><span>Certified Quality</span></div>
       </div>
     </div>
 
     <a href="#marquee" class="scroll-cue" aria-label="Scroll down">
       <span></span>
     </a>
+  </section>
+
+  <!-- ================= SECONDARY FULL-WIDTH BANNER ================= -->
+  <section class="wide-photo">
+    <img src="Assets/sospensione-esi-italia-come-funziona.jpg" alt="TOP DRIVE SYSTEM air suspension installed on a vehicle" loading="lazy" data-speed="0.1" />
+    <div class="wide-photo-caption reveal">
+      <span>Real components. Real installations.</span>
+    </div>
   </section>
 
   <!-- ================= MARQUEE ================= -->
