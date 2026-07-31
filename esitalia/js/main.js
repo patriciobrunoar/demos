@@ -47,6 +47,17 @@
   onScrollUI();
   onParallax();
 
+  /* ---------- Hero image rotation ---------- */
+  const heroSlides = document.querySelectorAll('.hero-slide');
+  if (heroSlides.length > 1 && !reducedMotion) {
+    let activeIndex = 0;
+    setInterval(() => {
+      heroSlides[activeIndex].classList.remove('is-active');
+      activeIndex = (activeIndex + 1) % heroSlides.length;
+      heroSlides[activeIndex].classList.add('is-active');
+    }, 5500);
+  }
+
   /* ---------- Reveal on scroll ---------- */
   const revealEls = document.querySelectorAll('.reveal, .spring-art');
   const revealObserver = new IntersectionObserver((entries) => {

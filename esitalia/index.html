@@ -63,8 +63,10 @@
 
   <!-- ================= HERO ================= -->
   <section class="hero">
-    <div class="hero-media" data-speed="0.15" aria-hidden="true">
-      <img src="Assets/esiitalia-montaggio.jpg" alt="" loading="eager" />
+    <div class="hero-media" id="heroMedia" aria-hidden="true">
+      <img class="hero-slide is-active" src="Assets/esiitalia-montaggio.jpg" alt="" loading="eager" />
+      <img class="hero-slide" src="Assets/sospensione-esi-italia-come-funziona.jpg" alt="" loading="lazy" />
+      <img class="hero-slide" src="Assets/stand-fieristico.jpg" alt="" loading="lazy" />
       <div class="hero-media-overlay"></div>
     </div>
 
@@ -83,25 +85,17 @@
         <a href="#products" class="btn btn-primary magnetic"><span>Explore Our Products</span></a>
         <a href="#contact" class="btn btn-ghost-light magnetic"><span>Request a Consultation</span></a>
       </div>
+    </div>
 
-      <div class="hero-chips reveal" style="--d:4">
-        <div class="chip"><strong>1000+</strong><span>Projects Delivered</span></div>
-        <div class="chip"><strong>200,000+</strong><span>Products Sold</span></div>
-        <div class="chip"><strong>ISO 9001</strong><span>Certified Quality</span></div>
-      </div>
+    <div class="hero-chips" aria-hidden="true">
+      <div class="chip chip-1"><strong>1000+</strong><span>Projects Delivered</span></div>
+      <div class="chip chip-2"><strong>200,000+</strong><span>Products Sold</span></div>
+      <div class="chip chip-3"><strong>ISO 9001</strong><span>Certified Quality</span></div>
     </div>
 
     <a href="#marquee" class="scroll-cue" aria-label="Scroll down">
       <span></span>
     </a>
-  </section>
-
-  <!-- ================= SECONDARY FULL-WIDTH BANNER ================= -->
-  <section class="wide-photo">
-    <img src="Assets/sospensione-esi-italia-come-funziona.jpg" alt="TOP DRIVE SYSTEM air suspension installed on a vehicle" loading="lazy" data-speed="0.1" />
-    <div class="wide-photo-caption reveal">
-      <span>Real components. Real installations.</span>
-    </div>
   </section>
 
   <!-- ================= MARQUEE ================= -->
@@ -188,26 +182,21 @@
 
   <!-- ================= WHERE WE OPERATE ================= -->
   <section class="operate">
-    <div class="container operate-grid">
-      <div class="operate-copy reveal">
-        <p class="eyebrow"><span class="dot"></span>Where We Operate</p>
-        <h2>Present across Europe.</h2>
-        <p>ESI Italia supplies fleets, distributors and workshops across a wide network of
-        European countries — combining Italian manufacturing with reliable, cross-border
-        technical support.</p>
-      </div>
-      <div class="operate-visual reveal" style="--d:1" data-speed="0.08">
-        <svg viewBox="0 0 200 220" class="europe-art" aria-hidden="true">
-          <path d="M60 10 L120 10 L150 40 L140 70 L160 90 L150 130 L170 160 L140 200 L90 210 L60 180 L30 190 L20 150 L40 120 L20 80 L50 60 Z"
-                fill="none" stroke="#c9d3e6" stroke-width="2"/>
-          <circle class="pin" cx="70" cy="70" r="4"/>
-          <circle class="pin" cx="105" cy="55" r="4"/>
-          <circle class="pin" cx="130" cy="95" r="4"/>
-          <circle class="pin" cx="85" cy="120" r="4"/>
-          <circle class="pin" cx="60" cy="150" r="4"/>
-          <circle class="pin" cx="115" cy="150" r="4"/>
-          <circle class="pin" cx="95" cy="90" r="5" style="--pd:0.3s"/>
-        </svg>
+    <div class="container">
+      <p class="eyebrow reveal center"><span class="dot"></span>Where We Operate</p>
+      <h2 class="section-title reveal center">Present across Europe.</h2>
+      <p class="operate-sub reveal center">ESI Italia supplies fleets, distributors and workshops across a wide network of
+      European countries — combining Italian manufacturing with reliable, cross-border technical support.</p>
+
+      <div class="operate-map reveal" style="--d:1">
+        <img src="Assets/mappa.webp" alt="Map of the European countries ESI Italia supplies" loading="lazy" />
+        <span class="pin" style="left:52%; top:75%; --pd:.2s"></span>
+        <span class="pin" style="left:21%; top:67%; --pd:.9s"></span>
+        <span class="pin" style="left:11%; top:83%; --pd:1.6s"></span>
+        <span class="pin" style="left:14%; top:49%; --pd:.5s"></span>
+        <span class="pin" style="left:54%; top:54%; --pd:1.2s"></span>
+        <span class="pin" style="left:57%; top:49%; --pd:2s"></span>
+        <span class="pin" style="left:33%; top:57%; --pd:1.5s"></span>
       </div>
     </div>
   </section>
