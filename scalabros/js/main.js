@@ -4,20 +4,28 @@
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- Graceful image fallback (assets not uploaded yet) ---------- */
+  function handleImgFallback(img) {
+    const wrap = img.closest('[data-media]');
+    const fallbackText = img.dataset.fallbackText;
+    if (fallbackText) {
+      const span = document.createElement('span');
+      span.className = 'logo-word';
+      span.textContent = fallbackText;
+      img.replaceWith(span);
+    } else if (wrap) {
+      wrap.classList.add('no-media');
+      img.style.display = 'none';
+    }
+  }
   document.querySelectorAll('[data-media] img').forEach((img) => {
-    img.addEventListener('error', () => {
-      const wrap = img.closest('[data-media]');
-      const fallbackText = img.dataset.fallbackText;
-      if (fallbackText) {
-        const span = document.createElement('span');
-        span.className = 'logo-word';
-        span.textContent = fallbackText;
-        img.replaceWith(span);
-      } else if (wrap) {
-        wrap.classList.add('no-media');
-        img.style.display = 'none';
-      }
-    }, { once: true });
+    // the image may have already failed to load before this script (at the
+    // end of body) runs, since <img> requests fire during HTML parsing —
+    // a late-attached 'error' listener would miss that. Check first.
+    if (img.complete && img.naturalWidth === 0) {
+      handleImgFallback(img);
+    } else {
+      img.addEventListener('error', () => handleImgFallback(img), { once: true });
+    }
   });
 
   /* ---------- Nav scroll state + progress bar ---------- */
@@ -64,14 +72,30 @@
   onScrollUI();
   onParallax();
 
-  /* ---------- Cursor glow ---------- */
-  const cursorGlow = document.getElementById('cursorGlow');
-  if (!reducedMotion && matchMedia('(hover: hover)').matches && cursorGlow) {
+  /* ---------- Custom ring cursor (trails with easing, grows on hover) ---------- */
+  const ring = document.getElementById('cursorRing');
+  if (!reducedMotion && matchMedia('(hover: hover)').matches && ring) {
+    let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+    let ringX = mouseX, ringY = mouseY;
+
     window.addEventListener('mousemove', (e) => {
-      cursorGlow.classList.add('is-active');
-      cursorGlow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%,-50%)`;
+      mouseX = e.clientX; mouseY = e.clientY;
+      ring.classList.add('is-active');
     }, { passive: true });
-    window.addEventListener('mouseleave', () => cursorGlow.classList.remove('is-active'));
+    window.addEventListener('mouseleave', () => ring.classList.remove('is-active'));
+
+    function loop() {
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+      ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%,-50%)`;
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+
+    document.querySelectorAll('a, button, .tile, .sector-card, .member').forEach((el) => {
+      el.addEventListener('mouseenter', () => ring.classList.add('is-hover'));
+      el.addEventListener('mouseleave', () => ring.classList.remove('is-hover'));
+    });
   }
 
   /* ---------- Reveal on scroll ---------- */
@@ -111,6 +135,36 @@
     });
   }, { threshold: 0.5 });
   counters.forEach((el) => counterObserver.observe(el));
+
+  /* ---------- Sector horizontal scroller ---------- */
+  const scroller = document.getElementById('sectorScroller');
+  const dotsWrap = document.getElementById('sectorDots');
+  if (scroller && dotsWrap) {
+    const cards = Array.from(scroller.querySelectorAll('[data-sector]'));
+    cards.forEach((_, i) => {
+      const dot = document.createElement('span');
+      if (i === 0) dot.classList.add('active');
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
+          const idx = cards.indexOf(entry.target);
+          dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+        }
+      });
+    }, { root: scroller, threshold: [0.6] });
+    cards.forEach((c) => cardObserver.observe(c));
+
+    document.getElementById('sectorPrev')?.addEventListener('click', () => {
+      scroller.scrollBy({ left: -340, behavior: reducedMotion ? 'auto' : 'smooth' });
+    });
+    document.getElementById('sectorNext')?.addEventListener('click', () => {
+      scroller.scrollBy({ left: 340, behavior: reducedMotion ? 'auto' : 'smooth' });
+    });
+  }
 
   /* ---------- Active nav link on scroll ---------- */
   const sections = ['home', 'about', 'sectors', 'products', 'innovation', 'team', 'contact']
