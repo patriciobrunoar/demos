@@ -240,7 +240,29 @@ button{ font-family:inherit; }
   position:absolute; width:12px; height:12px; margin:-6px 0 0 -6px; border-radius:50%;
   background:var(--primary); box-shadow:0 0 0 4px var(--accent-soft);
   animation:pinpulse 2.4s ease-in-out infinite; animation-delay:var(--pd,0s);
+  cursor:pointer; border:none; padding:0; outline-offset:6px;
+  transition:transform .25s var(--ease), background .25s;
 }
+.operate-map .pin:hover,
+.operate-map .pin:focus-visible{
+  background:var(--navy); animation-play-state:paused; transform:scale(1.5);
+}
+.operate-map .pin::after{
+  content:attr(data-country);
+  position:absolute; left:50%; bottom:calc(100% + 10px); transform:translateX(-50%) translateY(4px);
+  background:var(--navy); color:#fff; font-family:'Space Grotesk',sans-serif; font-weight:600;
+  font-size:12.5px; white-space:nowrap; padding:6px 12px; border-radius:8px;
+  opacity:0; pointer-events:none; transition:opacity .2s var(--ease), transform .2s var(--ease);
+  box-shadow:0 10px 24px -8px rgba(21,37,73,.4);
+}
+.operate-map .pin::before{
+  content:''; position:absolute; left:50%; bottom:calc(100% + 6px); transform:translateX(-50%);
+  border:5px solid transparent; border-top-color:var(--navy);
+  opacity:0; pointer-events:none; transition:opacity .2s var(--ease);
+}
+.operate-map .pin:hover::after, .operate-map .pin:focus-visible::after{ opacity:1; transform:translateX(-50%) translateY(0); }
+.operate-map .pin:hover::before, .operate-map .pin:focus-visible::before{ opacity:1; }
+
 @keyframes pinpulse{ 0%,100%{ transform:scale(1); opacity:.7; } 50%{ transform:scale(1.35); opacity:1; } }
 
 /* ============ products ============ */
