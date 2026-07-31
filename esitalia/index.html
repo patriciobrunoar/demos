@@ -117,7 +117,7 @@
   <!-- ================= ABOUT ================= -->
   <section class="about" id="about">
     <div class="container about-grid">
-      <div class="about-copy">
+      <div class="about-copy reveal-left">
         <p class="eyebrow reveal"><span class="dot"></span>About Us</p>
         <h2 class="reveal">Industrial systems processing Italy.</h2>
         <p class="reveal" style="--d:1">
@@ -144,7 +144,7 @@
           network of specialised partners in the country.
         </p>
       </div>
-      <div class="about-visual reveal" style="--d:2" data-speed="0.08">
+      <div class="about-visual reveal-right" style="--d:1" data-speed="0.08">
         <img src="Assets/esiitalia-progettazione-sospensioni.jpeg" alt="ESI Italia engineers designing suspension components in CAD" loading="lazy" />
       </div>
     </div>
@@ -152,6 +152,10 @@
 
   <!-- ================= VALUES ================= -->
   <section class="values">
+    <div class="section-blobs" aria-hidden="true">
+      <div class="b1" style="top:-10%; right:-6%;"></div>
+      <div class="b2" style="bottom:-14%; left:-8%;"></div>
+    </div>
     <div class="container">
       <p class="eyebrow reveal center"><span class="dot"></span>Our Values</p>
       <h2 class="section-title reveal center">What drives every part we make.</h2>
@@ -182,6 +186,10 @@
 
   <!-- ================= WHERE WE OPERATE ================= -->
   <section class="operate">
+    <div class="section-blobs" aria-hidden="true">
+      <div class="b1" style="top:-16%; left:-8%;"></div>
+      <div class="b2" style="bottom:-10%; right:-6%;"></div>
+    </div>
     <div class="container">
       <p class="eyebrow reveal center"><span class="dot"></span>Where We Operate</p>
       <h2 class="section-title reveal center">Present across Europe.</h2>
@@ -203,6 +211,10 @@
 
   <!-- ================= PRODUCTS ================= -->
   <section class="products" id="products">
+    <div class="section-blobs" aria-hidden="true">
+      <div class="b1" style="top:-12%; left:30%;"></div>
+      <div class="b2" style="bottom:-16%; right:10%;"></div>
+    </div>
     <div class="container">
       <p class="eyebrow reveal center"><span class="dot"></span>What We Build</p>
       <h2 class="section-title reveal center">Components engineered to outlast the road.</h2>
@@ -267,28 +279,28 @@
       <p class="eyebrow reveal center"><span class="dot"></span>Our Brands</p>
       <h2 class="section-title reveal center">Two brands. One engineering standard.</h2>
 
-      <div class="brand-block reveal">
-        <div class="brand-copy">
+      <div class="brand-block">
+        <div class="brand-copy reveal-left">
           <span class="brand-tag">Since 1991</span>
           <h3>TOP DRIVE SYSTEM</h3>
           <p>Our flagship brand and one of the most extensive pneumatic suspension catalogues in
           Europe — built for nearly every chassis on the road, from heavy-duty trucks to campers.</p>
           <a href="https://www.topdrivesystem.it/en/" target="_blank" rel="noopener" class="btn btn-ghost btn-sm magnetic"><span>Visit Top Drive System ↗</span></a>
         </div>
-        <div class="brand-visual photo" data-speed="0.08">
+        <div class="brand-visual photo reveal-right" style="--d:1" data-speed="0.08">
           <img src="Assets/sospensione-esi-italia-come-funziona.jpg" alt="TOP DRIVE SYSTEM air suspension installed on a vehicle" loading="lazy" />
         </div>
       </div>
 
-      <div class="brand-block reverse reveal" style="--d:1">
-        <div class="brand-copy">
+      <div class="brand-block reverse">
+        <div class="brand-copy reveal-right">
           <span class="brand-tag">Since 1998</span>
           <h3>HYDROTECH</h3>
           <p>Reinforced shock absorbers engineered for vehicles running at maximum payload,
           delivering up to 30% more damping than the original — fully interchangeable.</p>
           <a href="https://www.hydrotech.it/en/" target="_blank" rel="noopener" class="btn btn-ghost btn-sm magnetic"><span>Visit Hydrotech ↗</span></a>
         </div>
-        <div class="brand-visual photo" data-speed="0.08">
+        <div class="brand-visual photo reveal-left" style="--d:1" data-speed="0.08">
           <img src="Assets/esi-italia-prodotti-made-in-italy-innovativi.jpg" alt="HYDROTECH reinforced shock absorber" loading="lazy" />
         </div>
       </div>
@@ -311,10 +323,10 @@
   <!-- ================= WORK WITH US ================= -->
   <section class="work" id="work">
     <div class="container work-grid">
-      <div class="work-photo reveal" data-speed="0.06">
+      <div class="work-photo reveal-left" data-speed="0.06">
         <img src="Assets/spedizione-prodotti-esiitalia.jpg" alt="Preparing a TOP DRIVE SYSTEM, made by ESI Italia, shipment" loading="lazy" />
       </div>
-      <div class="work-copy reveal" style="--d:1">
+      <div class="work-copy reveal-right" style="--d:1">
         <p class="eyebrow"><span class="dot"></span>Work With Us</p>
         <h2>Let&rsquo;s grow the network.</h2>
         <p>Interested in distributing ESI Italia products, joining our technical network or supplying
@@ -327,19 +339,22 @@
   <!-- ================= NEWS ================= -->
   <section class="news" id="news">
     <div class="container news-grid">
-      <div class="news-copy reveal">
+      <div class="news-copy reveal-left">
         <p class="eyebrow"><span class="dot"></span>News &amp; Events</p>
         <h2>Product launches, trade fairs &amp; company updates.</h2>
         <p class="muted">This section is ready to showcase your latest news, trade-fair appearances and product announcements once available.</p>
       </div>
-      <div class="news-photo reveal" style="--d:1" data-speed="0.06">
+      <div class="news-photo reveal-right" style="--d:1" data-speed="0.06">
         <img src="Assets/stand-fieristico.jpg" alt="ESI Italia and Top Drive System exhibition stand at a trade fair" loading="lazy" />
       </div>
     </div>
   </section>
 
   <!-- ================= CTA BANNER ================= -->
-  <section class="cta-banner" style="background-image:url('Assets/fiere-di-settore-trasporto-mezzispeciali.jpeg')">
+  <section class="cta-banner">
+    <div class="cta-media" aria-hidden="true">
+      <img src="Assets/fiere-di-settore-trasporto-mezzispeciali.jpeg" alt="" loading="lazy" />
+    </div>
     <div class="container cta-inner reveal">
       <h2>Ready to upgrade your fleet&rsquo;s ride?</h2>
       <p>Let&rsquo;s talk about how ESI Italia&rsquo;s engineering can work for you.</p>
@@ -349,8 +364,12 @@
 
   <!-- ================= CONTACT ================= -->
   <section class="contact" id="contact">
+    <div class="section-blobs" aria-hidden="true">
+      <div class="b1" style="top:-10%; right:-8%;"></div>
+      <div class="b2" style="bottom:-14%; left:20%;"></div>
+    </div>
     <div class="container contact-grid">
-      <div class="contact-info reveal">
+      <div class="contact-info reveal-left">
         <p class="eyebrow"><span class="dot"></span>Get in Touch</p>
         <h2>Let&rsquo;s engineer your next component.</h2>
         <p class="muted">Tell us about your fleet or your application, and our team will get back to you.</p>
@@ -372,7 +391,7 @@
         </div>
       </div>
 
-      <form class="contact-form reveal" style="--d:1" onsubmit="event.preventDefault(); this.querySelector('.form-status').textContent='Thanks — this is a demo form, no message was actually sent.';">
+      <form class="contact-form reveal-right" style="--d:1" onsubmit="event.preventDefault(); this.querySelector('.form-status').textContent='Thanks — this is a demo form, no message was actually sent.';">
         <div class="field">
           <label for="name">Name</label>
           <input id="name" type="text" placeholder="Your name" required />
