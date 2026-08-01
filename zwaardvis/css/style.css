@@ -286,6 +286,13 @@ button{ font-family:inherit; }
 .family-tile strong{ display:block; font-size:16.5px; color:var(--ink); font-weight:600; margin-bottom:6px; }
 .family-tile span{ display:block; font-size:12.5px; color:var(--text-faint); letter-spacing:.02em; }
 
+.collection-visual{
+  grid-column:1 / -1; aspect-ratio:21/9; border-radius:20px; overflow:hidden; margin-top:4px;
+  background:linear-gradient(155deg,var(--teal),var(--teal-dark));
+}
+.collection-visual img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .8s var(--ease); }
+.collection-visual:hover img{ transform:scale(1.05); }
+
 /* ============ philosophy (dark full-bleed) ============ */
 .philosophy{ padding:120px 0; background:var(--teal); position:relative; overflow:hidden; }
 .philosophy::after{
