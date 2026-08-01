@@ -28,6 +28,17 @@
     }
   });
 
+  /* ---------- Same fallback for the hero video (unsupported codec/format) ---------- */
+  document.querySelectorAll('[data-media] video').forEach((video) => {
+    const wrap = video.closest('[data-media]');
+    const fallback = () => wrap && wrap.classList.add('no-media');
+    video.addEventListener('error', fallback, { once: true });
+    video.addEventListener('stalled', fallback, { once: true });
+    // codec/decode failures don't always fire 'error' — if nothing has
+    // loaded after a few seconds, treat it as failed.
+    setTimeout(() => { if (video.readyState === 0) fallback(); }, 3000);
+  });
+
   /* ---------- Nav scroll state + progress bar + back-to-top ---------- */
   const nav = document.getElementById('nav');
   const progressBar = document.getElementById('progressBar');

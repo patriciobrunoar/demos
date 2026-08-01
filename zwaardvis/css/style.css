@@ -199,10 +199,17 @@ button{ font-family:inherit; }
 .hero{ position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden; background:var(--teal-deep); }
 .hero-media{ position:absolute; inset:0; z-index:0; overflow:hidden; }
 .hero-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; animation:kenburns 34s ease-in-out infinite alternate; }
+.hero-media video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .hero-media.no-media{ background:
     radial-gradient(1100px 700px at 15% 20%, rgba(6,128,163,.55), transparent 60%),
     radial-gradient(900px 600px at 85% 75%, rgba(243,146,0,.28), transparent 55%),
     linear-gradient(155deg, var(--teal-deep), var(--teal-dark) 55%, var(--teal) 130%);
+}
+.hero-media-overlay{
+  position:absolute; inset:0; z-index:1;
+  background:
+    linear-gradient(0deg, rgba(0,20,26,.92) 0%, rgba(0,20,26,.58) 42%, rgba(0,20,26,.3) 68%, rgba(0,20,26,.55) 100%),
+    linear-gradient(100deg, rgba(0,20,26,.5) 0%, rgba(0,20,26,.05) 55%);
 }
 .hero-waves{ position:absolute; left:0; right:0; bottom:-2px; z-index:1; width:100%; line-height:0; }
 .hero-waves svg{ width:100%; height:auto; display:block; }
