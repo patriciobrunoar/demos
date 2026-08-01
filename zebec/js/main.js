@@ -53,10 +53,48 @@
     window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
   });
 
-  /* ---------- Hero background video (YouTube) ---------- */
-  const heroVideo = document.getElementById('heroVideo');
-  if (heroVideo && !reducedMotion) {
-    heroVideo.src = heroVideo.dataset.src;
+  /* ---------- Hero background video (YouTube IFrame Player API) ---------- */
+  const heroVideoEl = document.getElementById('heroVideo');
+  if (heroVideoEl && !reducedMotion) {
+    const videoId = heroVideoEl.dataset.videoId;
+
+    window.onYouTubeIframeAPIReady = function () {
+      new YT.Player('heroVideo', {
+        videoId,
+        playerVars: {
+          autoplay: 1,
+          mute: 1,
+          controls: 0,
+          disablekb: 1,
+          fs: 0,
+          iv_load_policy: 3,
+          loop: 1,
+          modestbranding: 1,
+          playlist: videoId,
+          playsinline: 1,
+          rel: 0,
+          showinfo: 0,
+        },
+        events: {
+          onReady(e) {
+            e.target.mute();
+            e.target.playVideo();
+          },
+          // Belt-and-braces loop: if the playlist-loop trick doesn't kick in,
+          // force a restart instead of leaving YouTube's end-screen/controls visible.
+          onStateChange(e) {
+            if (e.data === YT.PlayerState.ENDED) {
+              e.target.seekTo(0);
+              e.target.playVideo();
+            }
+          },
+        },
+      });
+    };
+
+    const ytScript = document.createElement('script');
+    ytScript.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(ytScript);
   }
 
   /* ---------- Reveal on scroll ---------- */
