@@ -18,7 +18,7 @@
   --text-faint:#9c9188;
   --ease: cubic-bezier(.16,1,.3,1);
   --container: 1280px;
-  --nav-h: 88px;
+  --nav-h: 108px;
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
@@ -172,14 +172,14 @@ address{ font-style:normal; }
   border-bottom:1px solid var(--border);
   transition:box-shadow .4s var(--ease), height .3s var(--ease), background .3s, border-color .3s;
 }
-.nav.scrolled{ box-shadow:0 8px 30px -14px rgba(27,22,19,.16); height:72px; }
+.nav.scrolled{ box-shadow:0 8px 30px -14px rgba(27,22,19,.16); height:88px; }
 .nav-inner{ display:flex; align-items:center; justify-content:space-between; width:100%; gap:24px; }
 
 .logo{ display:flex; align-items:center; gap:9px; flex-shrink:0; }
-.logo-img{ height:64px; width:auto; max-width:260px; object-fit:contain; }
+.logo-img{ height:84px; width:auto; max-width:320px; object-fit:contain; }
 .logo-word{ font-family:'Baloo 2',sans-serif; font-weight:700; letter-spacing:.01em; font-size:26px; color:var(--ink); text-transform:lowercase; }
 .logo-word .accent{ color:var(--orange); }
-.footer .logo-img{ height:56px; }
+.footer .logo-img{ height:72px; }
 .footer .logo-word{ color:#fff; }
 .footer .logo-word .accent{ color:var(--orange-mid); }
 
@@ -369,6 +369,7 @@ address{ font-style:normal; }
 
 @media (max-width:760px){
   :root{ --nav-h:72px; }
+  .logo-img{ height:52px; }
   .reveal-left{ transform:translateX(-24px); }
   .reveal-right{ transform:translateX(24px); }
   .nav-links, .nav-cta .btn-fill{ display:none; }
