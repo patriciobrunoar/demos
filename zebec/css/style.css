@@ -145,33 +145,33 @@ section{ position: relative; }
 /* ---------- Hero ---------- */
 .hero{
   position: relative; min-height: 100svh; display: flex; align-items: flex-end;
-  padding-bottom: 90px; overflow: hidden; background: var(--ink);
+  padding-bottom: 170px; overflow: hidden; background: var(--ink);
 }
-.hero-media{ position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hero-media{ position: absolute; inset: 0; z-index: 0; overflow: hidden; isolation: isolate; }
 .hero-poster{
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover;
 }
-.hero-video-wrap{ position: absolute; inset: 0; overflow: hidden; }
+.hero-video-wrap{ position: absolute; inset: 0; z-index: 1; overflow: hidden; pointer-events: none; }
 .hero-video-wrap iframe{
   position: absolute; top: 50%; left: 50%; border: 0; pointer-events: none;
   width: 177.78vh; height: 56.25vw; /* forces 16:9 to always cover the box, like object-fit: cover */
   min-width: 100%; min-height: 100%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1.24); /* crop past the YouTube UI chrome at the edges */
 }
 @media (prefers-reduced-motion: reduce){ .hero-video-wrap{ display: none; } }
 .hero-media-overlay{
-  position: absolute; inset: 0;
+  position: absolute; inset: 0; z-index: 2;
   background:
     linear-gradient(180deg, rgba(10,16,26,.55) 0%, rgba(10,16,26,.35) 40%, rgba(6,10,16,.88) 100%);
 }
-.hero-frame{ position: absolute; inset: 100px 32px; pointer-events: none; z-index: 2; }
+.hero-frame{ position: absolute; inset: 100px 32px; pointer-events: none; z-index: 3; }
 .corner{ position: absolute; width: 34px; height: 34px; border-color: rgba(255,255,255,.55); }
 .corner.tl{ top: 0; left: 0; border-top: 2px solid; border-left: 2px solid; }
 .corner.tr{ top: 0; right: 0; border-top: 2px solid; border-right: 2px solid; }
 .corner.bl{ bottom: 0; left: 0; border-bottom: 2px solid; border-left: 2px solid; }
 .corner.br{ bottom: 0; right: 0; border-bottom: 2px solid; border-right: 2px solid; }
 
-.hero-inner{ position: relative; z-index: 3; color: #fff; }
+.hero-inner{ position: relative; z-index: 4; color: #fff; }
 .eyebrow{
   display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700;
   letter-spacing: .16em; text-transform: uppercase; color: var(--grey-light); margin-bottom: 22px;
@@ -195,7 +195,7 @@ section{ position: relative; }
 
 .scroll-cue{
   position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 3;
+  display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 4;
   color: rgba(255,255,255,.75); font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
 }
 .scroll-mouse{
@@ -439,7 +439,7 @@ section{ position: relative; }
   .about-media{ order: -1; aspect-ratio: 16/10; }
 }
 @media (max-width: 640px){
-  .hero{ padding-bottom: 60px; }
+  .hero{ padding-bottom: 130px; }
   .hero-frame{ inset: 80px 16px; }
   .utility-inner{ font-size: 11px; gap: 14px; }
 }
