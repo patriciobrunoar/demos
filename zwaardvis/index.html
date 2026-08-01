@@ -73,6 +73,17 @@
     </video>
   </div>
   <div class="hero-media-overlay" aria-hidden="true"></div>
+  <div class="hero-shimmer" aria-hidden="true"></div>
+  <div class="hero-bubbles" aria-hidden="true">
+    <span style="left:6%; --size:8px; --dur:15s; --delay:0s"></span>
+    <span style="left:16%; --size:5px; --dur:12s; --delay:2.4s"></span>
+    <span style="left:28%; --size:10px; --dur:17s; --delay:1s"></span>
+    <span style="left:42%; --size:6px; --dur:13s; --delay:4s"></span>
+    <span style="left:58%; --size:7px; --dur:16s; --delay:.6s"></span>
+    <span style="left:71%; --size:5px; --dur:11s; --delay:3.2s"></span>
+    <span style="left:84%; --size:9px; --dur:18s; --delay:2s"></span>
+    <span style="left:93%; --size:6px; --dur:14s; --delay:5s"></span>
+  </div>
   <div class="hero-waves" aria-hidden="true">
     <svg viewBox="0 0 1440 180" preserveAspectRatio="none" data-speed="0.06">
       <path class="w1" d="M0,90 C240,150 480,30 720,90 C960,150 1200,30 1440,90 L1440,180 L0,180 Z"></path>
@@ -136,9 +147,14 @@
 
 <!-- ============ ABOUT ============ -->
 <section class="about" id="about">
+  <div class="ambient" aria-hidden="true"><span class="g1" style="top:-10%; right:-8%;"></span><span class="g2" style="bottom:-14%; left:-6%;"></span></div>
   <div class="container about-grid">
-    <div class="about-visual reveal-left" data-media>
+    <div class="about-visual reveal-left" data-speed="0.04" data-media>
       <img src="Assets/caravan-dinette-table.jpg" alt="Caravan dinette with a Zwaardvis height-adjustable table pedestal">
+      <div class="about-badge">
+        <strong data-count="40" data-suffix="+">0</strong>
+        <span>Years Of Craft</span>
+      </div>
     </div>
     <div class="about-copy reveal-right">
       <p class="eyebrow">About Us</p>
@@ -156,12 +172,13 @@
 
 <!-- ============ THREE-CARD PANEL ============ -->
 <section class="panel">
+  <div class="ambient" aria-hidden="true"><span class="g1" style="top:-12%; left:8%;"></span><span class="g2" style="bottom:-10%; right:10%;"></span></div>
   <div class="container">
     <p class="eyebrow center reveal">Get To Know Us</p>
     <h2 class="section-title center reveal" style="--d:1">Where would you like to start?</h2>
 
     <div class="panel-grid">
-      <div class="panel-card reveal" style="--d:1">
+      <div class="panel-card reveal" data-speed="0.025" style="--d:1">
         <div class="panel-media no-media" data-media>
           <img src="Assets/homepage-card-about-us-video.jpg" alt="Inside a Zwaardvis-equipped dinette" data-fallback-silent>
         </div>
@@ -175,7 +192,7 @@
         </div>
       </div>
 
-      <div class="panel-card reveal" style="--d:2">
+      <div class="panel-card reveal" data-speed="0.04" style="--d:2">
         <div class="panel-media no-media" data-media>
           <img src="Assets/homepage-card-our-collection.jpg" alt="Zwaardvis boat seating and table pedestal" data-fallback-silent>
         </div>
@@ -194,7 +211,7 @@
         </div>
       </div>
 
-      <div class="panel-card reveal" style="--d:3">
+      <div class="panel-card reveal" data-speed="0.025" style="--d:3">
         <div class="panel-media no-media" data-media>
           <img src="Assets/homepage-card-contact.jpg" alt="Campervan cockpit fitted with Zwaardvis components" data-fallback-silent>
         </div>
@@ -227,11 +244,11 @@
           <h3>Table pedestals for recreational vehicles.</h3>
           <p>Fixed-height, twist-lock and fully removable pedestals for motorhomes and campervans — engineered to be as easy to fold away as they are to trust on the road.</p>
         </div>
-        <div class="family-grid reveal-right">
-          <div class="family-tile"><strong>Gamma</strong><span>Fixed height</span></div>
-          <div class="family-tile"><strong>QR Ares</strong><span>Twist-lock, swivel</span></div>
-          <div class="family-tile"><strong>Quick Release RV</strong><span>Fully removable</span></div>
-          <div class="collection-visual reveal-right" style="--d:1" data-media>
+        <div class="family-grid">
+          <div class="family-tile reveal" style="--d:0"><strong>Gamma</strong><span>Fixed height</span></div>
+          <div class="family-tile reveal" style="--d:1"><strong>QR Ares</strong><span>Twist-lock, swivel</span></div>
+          <div class="family-tile reveal" style="--d:2"><strong>Quick Release RV</strong><span>Fully removable</span></div>
+          <div class="collection-visual reveal-right" data-speed="0.03" style="--d:3" data-media>
             <img src="Assets/rv-cockpit-swivel-seats.jpg" alt="Motorhome cockpit with Zwaardvis swivel captain seats and dinette table">
           </div>
         </div>
@@ -246,10 +263,10 @@
           <h3>Table pedestals for marine leisure.</h3>
           <p>Heavy-duty and height-adjustable pedestals built to hold their own on deck — corrosion-resistant, precision-machined, and finished in-house.</p>
         </div>
-        <div class="family-grid reveal-left">
-          <div class="family-tile"><strong>T-System</strong><span>Heavy duty, single fold</span></div>
-          <div class="family-tile"><strong>Sigma</strong><span>Height adjustable</span></div>
-          <div class="collection-visual reveal-left" style="--d:1" data-media>
+        <div class="family-grid">
+          <div class="family-tile reveal" style="--d:0"><strong>T-System</strong><span>Heavy duty, single fold</span></div>
+          <div class="family-tile reveal" style="--d:1"><strong>Sigma</strong><span>Height adjustable</span></div>
+          <div class="collection-visual reveal-left" data-speed="0.03" style="--d:2" data-media>
             <img src="Assets/marine-aft-deck-table.jpg" alt="Yacht aft-deck seating around a Zwaardvis table pedestal">
           </div>
         </div>
@@ -264,12 +281,12 @@
           <h3>Seat pedestals for marine leisure.</h3>
           <p>From box mounting to deck tracks, our seat pedestals are built around comfort and stability — including the Pörtner range of professional helm seating for commercial and leisure marine use.</p>
         </div>
-        <div class="family-grid reveal-right">
-          <div class="family-tile"><strong>Proteus</strong><span>Seat pedestal family</span></div>
-          <div class="family-tile"><strong>Box Mounting</strong><span>Deck-integrated base</span></div>
-          <div class="family-tile"><strong>Deck Tracks</strong><span>Sliding adjustment</span></div>
-          <div class="family-tile"><strong>Footrests</strong><span>Helm &amp; seat options</span></div>
-          <div class="family-tile"><strong>Pörtner Helm Seats</strong><span>Professional helm seating</span></div>
+        <div class="family-grid">
+          <div class="family-tile reveal" style="--d:0"><strong>Proteus</strong><span>Seat pedestal family</span></div>
+          <div class="family-tile reveal" style="--d:1"><strong>Box Mounting</strong><span>Deck-integrated base</span></div>
+          <div class="family-tile reveal" style="--d:2"><strong>Deck Tracks</strong><span>Sliding adjustment</span></div>
+          <div class="family-tile reveal" style="--d:3"><strong>Footrests</strong><span>Helm &amp; seat options</span></div>
+          <div class="family-tile reveal" style="--d:4"><strong>Pörtner Helm Seats</strong><span>Professional helm seating</span></div>
         </div>
       </div>
     </article>
@@ -284,16 +301,16 @@
       <h2>Quality and reliability, before fashionable trends.</h2>
       <p>Zwaardvis and Pörtner Seats are both family-run businesses, now in their second and third generation. Product quality, reliability and ergonomic design come first — and every pedestal we build is backed by a full repair service.</p>
       <div class="fed-list">
-        <span class="fed-badge">HISWA</span>
-        <span class="fed-badge">ABYC</span>
-        <span class="fed-badge">German Boat Builders' Association</span>
+        <span class="fed-badge reveal" style="--d:2">HISWA</span>
+        <span class="fed-badge reveal" style="--d:3">ABYC</span>
+        <span class="fed-badge reveal" style="--d:4">German Boat Builders' Association</span>
       </div>
     </div>
-    <div class="philosophy-stats reveal-right">
-      <div class="pstat"><strong data-count="40" data-suffix="+">0</strong><span>Years In Business</span></div>
-      <div class="pstat"><strong>2ⁿᵈ–3ʳᵈ</strong><span>Generation Family-Run</span></div>
-      <div class="pstat"><strong>2010</strong><span>Lande Marine Founded</span></div>
-      <div class="pstat"><strong>3</strong><span>Industry Federations</span></div>
+    <div class="philosophy-stats">
+      <div class="pstat reveal" style="--d:0"><strong data-count="40" data-suffix="+">0</strong><span>Years In Business</span></div>
+      <div class="pstat reveal" style="--d:1"><strong>2ⁿᵈ–3ʳᵈ</strong><span>Generation Family-Run</span></div>
+      <div class="pstat reveal" style="--d:2"><strong>2010</strong><span>Lande Marine Founded</span></div>
+      <div class="pstat reveal" style="--d:3"><strong>3</strong><span>Industry Federations</span></div>
     </div>
   </div>
 </section>
@@ -313,6 +330,7 @@
 
 <!-- ============ CONTACT ============ -->
 <section class="contact" id="contact">
+  <div class="ambient" aria-hidden="true"><span class="g1" style="top:-10%; right:-6%;"></span><span class="g2" style="bottom:-12%; left:16%;"></span></div>
   <div class="container contact-grid">
     <div class="contact-copy reveal-left">
       <p class="eyebrow">Contact</p>
@@ -320,21 +338,21 @@
       <p>Zwaardvis doesn't run a contact form — every enquiry goes straight to a person. Reach the head office directly by phone or email and we'll route you to the right specialist.</p>
     </div>
     <div class="info-card reveal-right">
-      <div class="info-line">
+      <div class="info-line reveal" style="--d:0">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
         <address>
           <span class="info-label">Head Office</span>
           Van Leeuwenhoekweg 21<br>5482 TK Schijndel, The Netherlands
         </address>
       </div>
-      <div class="info-line">
+      <div class="info-line reveal" style="--d:1">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
         <address>
           <span class="info-label">Postal Address</span>
           P.O. Box 115<br>5480 AC Schijndel, The Netherlands
         </address>
       </div>
-      <div class="info-line">
+      <div class="info-line reveal" style="--d:2">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
         <div>
           <span class="info-label">Phone</span>
@@ -343,7 +361,7 @@
           +31 (0)73 543 23 21
         </div>
       </div>
-      <div class="info-line">
+      <div class="info-line reveal" style="--d:3">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
         <div>
           <span class="info-label">Email</span>
@@ -358,13 +376,13 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-top">
-      <div class="footer-brand">
+      <div class="footer-brand reveal" style="--d:0">
         <a href="#home" class="logo" data-media>
           <img src="Assets/zwaardvis_reverse.svg" alt="Zwaardvis" class="logo-img" data-fallback-text="ZWAARDVIS">
         </a>
         <p>Seat pedestals and table columns for marine leisure and recreational vehicles. Part of Landemarine BV.</p>
       </div>
-      <div class="footer-col">
+      <div class="footer-col reveal" style="--d:1">
         <h4>Collection</h4>
         <ul>
           <li><a href="#rv-tables">RV Tables</a></li>
@@ -373,7 +391,7 @@
           <li><a href="#marine-seats">Pörtner Helm Seats</a></li>
         </ul>
       </div>
-      <div class="footer-col">
+      <div class="footer-col reveal" style="--d:2">
         <h4>Company</h4>
         <ul>
           <li><a href="#about">About Us</a></li>
