@@ -93,9 +93,49 @@
   if (toTop) {
     toTop.addEventListener('click', (e) => {
       e.preventDefault();
-      window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+      scrollToY(0, reducedMotion ? 0 : 900);
     });
   }
+
+  /* ---------- Smooth Scroll with Eased Animation Curve ---------- */
+  function easeInOutQuart(t) {
+    return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
+  }
+
+  function scrollToY(targetY, duration = 1000) {
+    const startY = window.scrollY;
+    const distance = targetY - startY;
+    if (Math.abs(distance) < 4) return;
+    const startTime = performance.now();
+
+    function step(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeInOutQuart(progress);
+
+      window.scrollTo(0, startY + distance * easedProgress);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const href = anchor.getAttribute('href');
+      if (href === '#' || !href) return;
+      const targetEl = document.querySelector(href);
+      if (targetEl) {
+        e.preventDefault();
+        const navHeight = 76;
+        const targetY = Math.max(0, targetEl.getBoundingClientRect().top + window.scrollY - navHeight);
+        scrollToY(targetY, reducedMotion ? 0 : 1000);
+      }
+    });
+  });
 
   /* ---------- Custom ring cursor (trails with easing, grows on hover) ---------- */
   const ring = document.getElementById('cursorRing');
