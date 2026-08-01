@@ -2,10 +2,13 @@
 
 Status: **scaffolding only — waiting on real content and assets.**
 
-This will be a concept redesign of https://en.femkesrooftoptents.com/, in
-the same style as the other demos in this repo (`esitalia/`, `scalabros/`,
-`zwaardvis/`, `horrex/`): plain HTML/CSS/JS, real brand content only, no
-placeholder copy or stock imagery.
+This will be a single-page, English-language concept redesign of
+https://en.femkesrooftoptents.com/, in the same style as the other demos
+in this repo (`esitalia/`, `scalabros/`, `zwaardvis/`, `horrex/`): plain
+HTML/CSS/JS, real brand content only, no placeholder copy or stock
+imagery. If the live site sells direct-to-consumer, this redesign shows
+real products/pricing/specs as a catalog with a contact/dealer CTA — no
+actual cart or checkout.
 
 ### Folder layout
 
