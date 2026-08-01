@@ -2,10 +2,10 @@
 
 Status: **scaffolding only — waiting on real content and assets.**
 
-This will be a single-page concept redesign of https://www.horrex.nl/,
-in the same style as the other demos in this repo (`esitalia/`,
-`scalabros/`, `zwaardvis/`): plain HTML/CSS/JS, real brand content only,
-no placeholder copy or stock imagery.
+This will be a single-page, English-language concept redesign of
+https://www.horrex.nl/, in the same style as the other demos in this repo
+(`esitalia/`, `scalabros/`, `zwaardvis/`): plain HTML/CSS/JS, real brand
+content only, no placeholder copy or stock imagery.
 
 ### Folder layout
 
