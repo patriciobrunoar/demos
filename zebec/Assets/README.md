@@ -1,32 +1,36 @@
-# Assets needed
+# Assets
 
-Drop files into this folder using these exact names so `index.html` picks them up automatically.
+Files currently in place:
 
-## Logos (transparent PNG or SVG)
-- `logo-zebec.png` — main ZEBEC wordmark
-- `logo-zpro.png` — Z-PRO logo
-- `logo-kxone.png` — KX One logo
-- `favicon.png` — square, 512x512 recommended
+## Logos
+- `logo-zebec.png` — ZEBEC wordmark (nav + footer)
+- `logo-zpro.png` — Z-PRO logo (nav + Brands section)
+- `logo-kxone.png` — KX One logo (nav + Brands section)
+- Favicon currently falls back to `logo-zebec.png`. Drop in a square `favicon.png` (512x512) to replace it.
 
 ## Hero
-- `hero-hero.jpg` — full-bleed action/water shot for the homepage hero (1920x1080 or larger)
+- `hero-hero.jpg` — poster image shown behind/under the hero video (and for `prefers-reduced-motion` users, who don't get the video)
+- Hero background video is a live YouTube embed (`lqvzr__NIf8`), wired in `index.html` / `js/main.js` — no local file needed.
 
 ## About
-- `hq-building.jpg` — Woosung I.B. HQ / office photo (portrait-ish crop works best, ~4:5)
+- `about-lifestyle.jpg` — SUP lifestyle shot used in the About section
 
-## Products (one photo per category, ~1200x1000 or larger, landscape)
-- `product-kayaks.jpg`
-- `product-sup-boards.jpg`
-- `product-fishing-boats.jpg`
-- `product-rafting-boats.jpg`
-- `product-transom-boats.jpg`
-- `product-rib.jpg`
-- `product-water-fun-ride.jpg`
-- `product-industrial-items.jpg`
-- `product-walker-bay-asia.jpg`
-- `product-water-park-items.jpg`
+## Products
+- `product-kayaks.png`
+- `product-sup-boards.png`
+- `product-fishing-boats.png`
+- `product-rafting-boats.png`
+- `product-transom-boats.png`
+- `product-rib.png`
+- `product-water-fun-ride.png`
+- `product-industrial-items.png`
+- `product-walker-bay-asia.png`
+- `product-water-park-items.png`
 
-## Optional
-- `zebec-catalogue.pdf` — linked from the utility bar, hero, and footer ("Download Catalogue")
+## Brands section
+- `brands-bg.jpg` — subtle fixed background behind the Z-PRO / KX One cards
 
-Once these are uploaded, the site will render fully — no code changes needed.
+## Still missing / optional
+- `favicon.png` — proper square favicon
+- `zebec-catalogue.pdf` — linked from the utility bar, hero, and footer ("Download Catalogue"); those links will 404 until it's added
+- A real Woosung I.B. office/HQ photo, if you want the About section to show the actual building instead of a lifestyle shot

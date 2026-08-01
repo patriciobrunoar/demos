@@ -147,10 +147,18 @@ section{ position: relative; }
   position: relative; min-height: 100svh; display: flex; align-items: flex-end;
   padding-bottom: 90px; overflow: hidden; background: var(--ink);
 }
-.hero-media{ position: absolute; inset: -6% -6%; z-index: 0; }
-.hero-media img{
+.hero-media{ position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hero-poster{
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
 }
+.hero-video-wrap{ position: absolute; inset: 0; overflow: hidden; }
+.hero-video-wrap iframe{
+  position: absolute; top: 50%; left: 50%; border: 0; pointer-events: none;
+  width: 177.78vh; height: 56.25vw; /* forces 16:9 to always cover the box, like object-fit: cover */
+  min-width: 100%; min-height: 100%;
+  transform: translate(-50%, -50%);
+}
+@media (prefers-reduced-motion: reduce){ .hero-video-wrap{ display: none; } }
 .hero-media-overlay{
   position: absolute; inset: 0;
   background:
@@ -292,7 +300,13 @@ section{ position: relative; }
 }
 
 /* ---------- Brands ---------- */
-.brands{ padding: 130px 0; background: var(--ink); color: #fff; overflow: hidden; }
+.brands{
+  padding: 130px 0; color: #fff; overflow: hidden; position: relative;
+  background:
+    linear-gradient(180deg, rgba(10,20,32,.92), rgba(10,20,32,.97)),
+    url('../Assets/brands-bg.jpg') center 30% / cover no-repeat fixed;
+}
+@media (max-width: 900px){ .brands{ background-attachment: scroll; } }
 .brands .section-desc, .brands .section-kicker span{ color: var(--grey-light); }
 .brand-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .brand-card{
