@@ -93,16 +93,23 @@
   if (toTop) {
     toTop.addEventListener('click', (e) => {
       e.preventDefault();
-      scrollToY(0, reducedMotion ? 0 : 900);
+      scrollToY(0, reducedMotion ? 0 : 800);
     });
   }
 
-  /* ---------- Smooth Scroll with Eased Animation Curve ---------- */
-  function easeInOutQuart(t) {
-    return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
+  /* ---------- Smooth Scroll with Responsive Eased Animation Curve ---------- */
+  let scrollAnimId = null;
+
+  function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
   }
 
-  function scrollToY(targetY, duration = 1000) {
+  function scrollToY(targetY, duration = 800) {
+    if (scrollAnimId) {
+      cancelAnimationFrame(scrollAnimId);
+      scrollAnimId = null;
+    }
+
     const startY = window.scrollY;
     const distance = targetY - startY;
     if (Math.abs(distance) < 4) return;
@@ -111,16 +118,18 @@
     function step(currentTime) {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      const easedProgress = easeInOutQuart(progress);
+      const easedProgress = easeInOutCubic(progress);
 
       window.scrollTo(0, startY + distance * easedProgress);
 
       if (progress < 1) {
-        requestAnimationFrame(step);
+        scrollAnimId = requestAnimationFrame(step);
+      } else {
+        scrollAnimId = null;
       }
     }
 
-    requestAnimationFrame(step);
+    scrollAnimId = requestAnimationFrame(step);
   }
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -132,7 +141,7 @@
         e.preventDefault();
         const navHeight = 76;
         const targetY = Math.max(0, targetEl.getBoundingClientRect().top + window.scrollY - navHeight);
-        scrollToY(targetY, reducedMotion ? 0 : 1000);
+        scrollToY(targetY, reducedMotion ? 0 : 850);
       }
     });
   });
