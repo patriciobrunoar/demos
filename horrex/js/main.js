@@ -18,8 +18,10 @@
       }
       img.replaceWith(span);
     } else if (wrap) {
-      wrap.classList.add('no-media');
       img.style.display = 'none';
+      const siblings = wrap.querySelectorAll('img');
+      const allFailed = Array.from(siblings).every((im) => im.style.display === 'none');
+      if (allFailed) wrap.classList.add('no-media');
     }
   }
   document.querySelectorAll('[data-media] img').forEach((img) => {
@@ -32,6 +34,17 @@
       img.addEventListener('error', () => handleImgFallback(img), { once: true });
     }
   });
+
+  /* ---------- Hero background rotation (crossfade) ---------- */
+  const heroBgs = document.querySelectorAll('.hero-bg');
+  if (heroBgs.length > 1 && !reducedMotion) {
+    let heroIdx = 0;
+    setInterval(() => {
+      heroBgs[heroIdx].classList.remove('is-active');
+      heroIdx = (heroIdx + 1) % heroBgs.length;
+      heroBgs[heroIdx].classList.add('is-active');
+    }, 6500);
+  }
 
   /* ---------- Nav scroll state + progress bar + back-to-top ---------- */
   const nav = document.getElementById('nav');
