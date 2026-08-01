@@ -1,33 +1,24 @@
-Real files needed to finish the Horrex redesign. Network policy in this
-build environment blocks static.wixstatic.com, so I could not download
-these automatically even though the audit found their URLs — please grab
-them yourself (right-click → Save image as… on horrex.nl, or re-run the
-Claude for Chrome pass) and drop them in this folder with these exact
-filenames:
+All real assets are now in place — nothing left to request.
 
-| Filename | What it is | Source (from the audit) |
+## What's wired into the site
+
+| File | Source | Notes |
 |---|---|---|
-| `horrex-logo.png` | Main wordmark logo, header + footer | https://static.wixstatic.com/media/14074c_a308d82d386944018b90b3222c1d08e3~mv2.jpg — a transparent PNG version is preferred if you have one, otherwise the JPG is fine |
-| `favicon.png` | Browser tab icon | https://static.wixstatic.com/media/14074c_83109ad002904748975216ea0472cb79~mv2_d_2000_1416_s_2.png |
-| `driving-change-logo.png` | "Part of Driving Change Group" footer logo | https://static.wixstatic.com/media/14074c_14c0c8404af543dcb8547b0036b49dc5~mv2.png |
-| `hero-background.jpg` | Full-bleed hero photo (RV/van/landscape) | The audit described this type of image but didn't capture an exact URL — grab the homepage hero photo directly |
-| `about-team.jpg` | One real "life at Horrex" office/team photo for the About section | Same — grab one from the About Us gallery |
+| `horrex-logo.png` | Uploaded `14074c_a308…mv2.avif` | Re-encoded to PNG (browsers decode AVIF fine too, but PNG keeps this consistent with the generated favicon) |
+| `driving-change-logo.png` | Uploaded `Driving Change - Logo.avif` | Re-encoded to PNG |
+| `favicon.png` | Derived from the Horrex logo | No square favicon was uploaded, so the wordmark was padded onto a white square canvas and downsized to 512×512 — swap this out if you have a real square icon |
+| `hero-background.jpg` | Uploaded `14074c_cf3b3831…mv2.avif` (motorhome on a mountain road) | Re-encoded to JPEG |
+| `about-visual.jpg` | Uploaded `0aa5c5_b94c7429…mv2.avif` (campervan on a rural touring road) | Renamed from the originally-planned `about-team.jpg` — no office/team photo was uploaded, so this real "life on the road" shot is used instead. Swap in an actual team/office photo any time if you'd rather have that. |
+| `marine-background.jpg` | Uploaded `download.avif` (aerial marina/boats shot) | Used as the Horrex Marine section backdrop — this wasn't a requested asset, but it was a strong fit for real content already in hand |
 
-## Design decision on the rest of the imagery
+## Unused extras
 
-To avoid using stock-photo placeholders for things I don't have real files
-for, the build uses:
-- **Original SVG icons** (not photos) for the 9 product category cards
-  (Windows, UCS Blinds, Flyscreen Doors, etc.) — clean, icon-driven product
-  grids are a strong 2026 pattern and don't require pretending to have real
-  product photography.
-- **Typographic wordmark chips** (styled company names, not logo images)
-  for the OEM client trust strip (Adria Mobil, Rapido, Swift Leisure,
-  Trigano, Hymer, Groupe Pilote, Coachman, nuCamp RV) and the dealer/
-  wholesaler list — since I don't have their actual logo files and won't
-  fabricate them.
+Two more real photos were uploaded but aren't used anywhere yet — kept in `originals/` in case you want a small photo gallery later:
+- `14074c_74bccd79…mv2.avif` — wide river/mountain valley, no vehicle
+- `14074c_b0000a2b…mv2_d_1600_1200_s_2.avif` — camper van in a dramatic Norwegian mountain pass
 
-If you'd rather have real product photography or the actual OEM/dealer
-logo files in any of those spots, drop them in this folder (any sensible
-filename) and tell me — I'll wire them in and drop the icon/wordmark
-fallback.
+## Originals
+
+The exact files you uploaded are preserved, untouched, in `originals/` — the
+site itself references the re-encoded/renamed copies in this folder, not
+the originals directly.
