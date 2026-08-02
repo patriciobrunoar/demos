@@ -59,7 +59,7 @@ address{ font-style:normal; }
 
 /* ============ parallax overflow & rendering ============ */
 .hero-media, .about-visual, .marine, .cta-media { overflow:hidden; }
-.hero-media img, .hero-bg, .about-visual img, .marine img, .cta-media img { will-change:transform; }
+.hero-media img, .hero-bg, .about-visual img, .marine img, .cta-media img { will-change:transform; transform-origin:center center; }
 
 @media (prefers-reduced-motion: reduce){
   *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
@@ -333,7 +333,8 @@ address{ font-style:normal; }
 .region-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:18px; }
 .region-card{ background:var(--bg-soft); border:1px solid var(--border); border-radius:18px; padding:26px 22px; transition:transform .4s var(--ease), box-shadow .4s var(--ease); }
 .region-card:hover{ transform:translateY(-6px); box-shadow:0 24px 50px -22px rgba(12,35,64,.22); }
-.region-card h4{ font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--teal); margin-bottom:14px; }
+.region-card h4{ font-size:13.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--teal); margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+.region-card h4 .flag-icon{ font-size:18px; line-height:1; }
 .region-card li{ font-size:13.5px; color:var(--text-dim); padding:6px 0; border-top:1px solid var(--border); }
 .region-card li:first-child{ border-top:none; }
 

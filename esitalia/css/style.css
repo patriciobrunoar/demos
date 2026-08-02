@@ -55,7 +55,7 @@ button{ font-family:inherit; }
 
 /* ============ parallax overflow & rendering ============ */
 .hero-media, .about-visual, .brand-visual, .cta-media, .work { overflow:hidden; }
-.hero-media img, .hero-slide, .about-visual img, .brand-visual img, .cta-media img, .work img { will-change:transform; }
+.hero-media img, .hero-slide, .about-visual img, .brand-visual img, .cta-media img, .work img { will-change:transform; transform-origin:center center; }
 
 @media (prefers-reduced-motion: reduce){
   *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }

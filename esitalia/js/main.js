@@ -33,9 +33,10 @@
         const elCenter = rect.top + rect.height / 2;
         const vpCenter = vh / 2;
         const isHero = el.classList.contains('hero-slide') || el.closest('.hero-media');
-        const speed = parseFloat(el.dataset.speed) || (isHero ? 0.18 : 0.1);
-        const translateY = (elCenter - vpCenter) * speed;
-        const baseScale = isHero ? 1.05 : 1.15;
+        const speed = parseFloat(el.dataset.speed) || (isHero ? 0.14 : 0.08);
+        const rawY = (elCenter - vpCenter) * speed;
+        const translateY = Math.max(-42, Math.min(42, rawY));
+        const baseScale = isHero ? 1.20 : 1.32;
         el.style.transform = `translate3d(0, ${translateY.toFixed(1)}px, 0) scale(${baseScale})`;
       }
     }

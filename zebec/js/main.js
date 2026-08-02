@@ -20,7 +20,7 @@
 
   /* ---------- Parallax (rAF throttled) ---------- */
   const parallaxTargets = Array.from(document.querySelectorAll(
-    '.hero-media img, .hero-poster, .about-media img, .tile-media img, .cta-media img, [data-speed], [data-parallax]'
+    '.hero-media img, .hero-bg, .about-media img, .panel-media img, .cta-media img, [data-speed], [data-parallax]'
   ));
 
   function onParallax() {
@@ -34,10 +34,15 @@
       if (rect.bottom > -100 && rect.top < vh + 100) {
         const elCenter = rect.top + rect.height / 2;
         const vpCenter = vh / 2;
-        const isHero = el.classList.contains('hero-poster') || el.closest('.hero-media');
-        const speed = parseFloat(el.dataset.speed) || (isHero ? 0.18 : 0.1);
-        const translateY = (elCenter - vpCenter) * speed;
-        const baseScale = isHero ? 1.05 : 1.15;
+        const isHero = el.classList.contains('hero-bg') || el.closest('.hero-media');
+        const isActive = el.classList.contains('is-active');
+        const speed = parseFloat(el.dataset.speed) || (isHero ? 0.14 : 0.08);
+        const rawY = (elCenter - vpCenter) * speed;
+        const translateY = Math.max(-42, Math.min(42, rawY));
+        let baseScale = 1.32;
+        if (isHero) {
+          baseScale = isActive ? 1.20 : 1.12;
+        }
         el.style.transform = `translate3d(0, ${translateY.toFixed(1)}px, 0) scale(${baseScale})`;
       }
     }

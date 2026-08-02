@@ -69,7 +69,7 @@ address { font-style: normal; }
 
 /* ============ parallax overflow & rendering ============ */
 .hero-media, .about-visual, .cta-media { overflow:hidden; }
-.hero-media img, .hero-bg, .about-visual img, .cta-media img { will-change:transform; }
+.hero-media img, .hero-bg, .about-visual img, .cta-media img { will-change:transform; transform-origin:center center; }
 
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }

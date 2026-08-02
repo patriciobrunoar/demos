@@ -76,11 +76,12 @@
         const vpCenter = vh / 2;
         const isHero = el.classList.contains('hero-bg') || el.closest('.hero-media');
         const isActive = el.classList.contains('is-active');
-        const speed = parseFloat(el.dataset.speed) || (isHero ? 0.18 : 0.1);
-        const translateY = (elCenter - vpCenter) * speed;
-        let baseScale = 1.15;
+        const speed = parseFloat(el.dataset.speed) || (isHero ? 0.14 : 0.08);
+        const rawY = (elCenter - vpCenter) * speed;
+        const translateY = Math.max(-42, Math.min(42, rawY));
+        let baseScale = 1.32;
         if (isHero) {
-          baseScale = isActive ? 1.08 : 1.04;
+          baseScale = isActive ? 1.20 : 1.12;
         }
         el.style.transform = `translate3d(0, ${translateY.toFixed(1)}px, 0) scale(${baseScale})`;
       }
