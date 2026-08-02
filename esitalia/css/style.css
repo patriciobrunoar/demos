@@ -432,8 +432,8 @@ button{ font-family:inherit; }
 
 @media (max-width:760px){
   :root{ --nav-h:108px; }
-  .reveal-left{ transform:translateX(-28px); }
-  .reveal-right{ transform:translateX(28px); }
+  .reveal-left, .reveal-right{ transform:translateY(18px) !important; }
+  .reveal-left.in-view, .reveal-right.in-view{ transform:translateY(0) !important; }
   .section-blobs .b1, .section-blobs .b2{ opacity:.16; }
   .utility-contact a:first-child{ display:none; }
   .nav-links{
@@ -449,14 +449,18 @@ button{ font-family:inherit; }
     opacity:1; transform:translateY(0); visibility:visible; pointer-events:auto;
   }
   .nav.menu-open .nav-links a{ font-size:20px; }
-  .hero{ height:auto; min-height:100vh; }
-  .hero-inner{ padding-top:20px; padding-bottom:140px; }
-  .scroll-cue{ position:absolute; bottom:14px; left:50%; transform:translateX(-50%) scale(0.85); z-index:4; display:block; }
+  .hero{ min-height:100vh; height:auto; padding-top:calc(var(--nav-h) + 16px); padding-bottom:120px; }
+  .hero-inner{ padding-top:10px; padding-bottom:40px; }
+  .scroll-cue{ position:absolute; bottom:20px; left:50%; transform:translateX(-50%) scale(0.85); z-index:4; display:block; }
   .hero-chips{ display:none; }
   .product-grid{ grid-template-columns:1fr; }
   .values-grid{ grid-template-columns:1fr 1fr; }
   .cert-inner{ flex-direction:column; text-align:center; }
-  .about-visual{ order:-1; margin-bottom:28px; }
+  .about-grid{ gap:36px; }
+  .about-visual{ order:-1; margin-bottom:16px; position:relative; z-index:1; }
+  .about-copy{ position:relative; z-index:2; }
+  .brand-visual{ order:-1; margin-bottom:16px; position:relative; z-index:1; }
+  .brand-copy{ position:relative; z-index:2; }
   .demo-flag{ display:none; }
   .footer-links{ flex-direction:column; align-items:center; gap:14px; }
   .container{ padding:0 18px; }
