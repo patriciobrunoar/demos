@@ -246,15 +246,19 @@ address{ font-style:normal; }
 .marquee-track .sep{ color:var(--lime); }
 .marquee-track.slow{ animation-duration:44s; }
 @keyframes scroll-left{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
-.marquee.subtle{ background:var(--bg-soft); padding:26px 0; }
+.marquee.subtle{ background:var(--bg-soft); padding:24px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
 .marquee.subtle .marquee-track{ color:var(--text-faint); gap:0; }
-.client-chip{
-  padding:12px 30px; font-family:'Big Shoulders Display',sans-serif; font-weight:700; font-size:19px;
-  letter-spacing:.03em; color:var(--text-faint); text-transform:none; border-right:1px solid var(--border);
-  transition:color .3s;
+.client-logo-item{
+  padding:14px 44px; display:flex; align-items:center; justify-content:center;
+  border-right:1px solid var(--border);
 }
-.marquee.subtle:hover .client-chip{ color:var(--text-faint); }
-.client-chip:hover{ color:var(--teal) !important; }
+.client-logo-item img{
+  height:36px; width:auto; max-width:140px; object-fit:contain;
+  filter:grayscale(100%) opacity(0.65); transition:filter .3s, transform .3s;
+}
+.client-logo-item:hover img{
+  filter:grayscale(0%) opacity(1); transform:scale(1.08);
+}
 
 /* ============ about / story ============ */
 .about{ padding:150px 0 90px; position:relative; overflow:hidden; }
