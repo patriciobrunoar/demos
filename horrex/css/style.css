@@ -57,6 +57,10 @@ address{ font-style:normal; }
 .container{ max-width:var(--container); margin:0 auto; padding:0 28px; position:relative; }
 ::selection{ background:var(--lime); color:var(--ink); }
 
+/* ============ parallax overflow & rendering ============ */
+.hero-media, .about-visual, .marine, .cta-media { overflow:hidden; }
+.hero-media img, .hero-bg, .about-visual img, .marine img, .cta-media img { will-change:transform; }
+
 @media (prefers-reduced-motion: reduce){
   *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
 }

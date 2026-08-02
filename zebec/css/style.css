@@ -26,6 +26,10 @@
 
 *, *::before, *::after{ box-sizing: border-box; }
 html{ scroll-behavior: smooth; }
+/* ============ parallax overflow & rendering ============ */
+.hero-media, .about-media, .tile-media, .cta-media { overflow:hidden; }
+.hero-media img, .hero-poster, .about-media img, .tile-media img, .cta-media img { will-change:transform; }
+
 @media (prefers-reduced-motion: reduce){ html{ scroll-behavior: auto; } }
 
 body{

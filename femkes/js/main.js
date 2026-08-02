@@ -59,18 +59,31 @@
   }
 
   /* ---------- Parallax (rAF throttled) ---------- */
-  const parallaxEls = Array.from(document.querySelectorAll('[data-speed]'));
+  const parallaxTargets = Array.from(document.querySelectorAll(
+    '.hero-media img, .hero-bg, .story-visual img, .accessories img, .dealers img, [data-speed], [data-parallax]'
+  ));
 
   function onParallax() {
     if (reducedMotion) return;
     const vh = window.innerHeight;
-    const y = window.scrollY;
-    for (const el of parallaxEls) {
-      const speed = parseFloat(el.dataset.speed) || 0.1;
-      const rect = el.getBoundingClientRect();
-      const elCenter = rect.top + y + rect.height / 2;
-      const offset = (y + vh / 2 - elCenter) * speed;
-      el.style.transform = `translate3d(0, ${offset * -1}px, 0)`;
+    for (let i = 0; i < parallaxTargets.length; i++) {
+      const el = parallaxTargets[i];
+      const parent = el.parentElement;
+      if (!parent) continue;
+      const rect = parent.getBoundingClientRect();
+      if (rect.bottom > -100 && rect.top < vh + 100) {
+        const elCenter = rect.top + rect.height / 2;
+        const vpCenter = vh / 2;
+        const isHero = el.classList.contains('hero-bg') || el.closest('.hero-media');
+        const isActive = el.classList.contains('is-active');
+        const speed = parseFloat(el.dataset.speed) || (isHero ? 0.22 : 0.12);
+        const translateY = (elCenter - vpCenter) * speed;
+        let baseScale = 1.15;
+        if (isHero) {
+          baseScale = isActive ? 1.08 : 1.04;
+        }
+        el.style.transform = `translate3d(0, ${translateY.toFixed(1)}px, 0) scale(${baseScale})`;
+      }
     }
   }
 
