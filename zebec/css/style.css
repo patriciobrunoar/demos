@@ -419,11 +419,15 @@ section{ position: relative; }
 /* ---------- Mobile nav ---------- */
 @media (max-width: 900px){
   .nav-links{
-    position: fixed; inset: 0; top: 0; z-index: 89; flex-direction: column; justify-content: center;
-    background: var(--ink); transform: translateX(100%); transition: transform .4s var(--ease);
-    gap: 26px;
+    position: fixed; inset: 0; top: 0;
+    z-index: 89; flex-direction: column; justify-content: center;
+    background: var(--ink); gap: 26px;
+    opacity: 0; transform: translateY(-18px); visibility: hidden; pointer-events: none;
+    transition: opacity .35s var(--ease), transform .35s var(--ease), visibility .35s;
   }
-  .nav.menu-open .nav-links{ transform: translateX(0); }
+  .nav.menu-open .nav-links{
+    opacity: 1; transform: translateY(0); visibility: visible; pointer-events: auto;
+  }
   .nav-links a{ font-size: 20px; }
   .nav-cta .btn-ghost{ display: none; }
   .burger{ display: flex; }

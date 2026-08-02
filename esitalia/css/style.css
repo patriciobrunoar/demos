@@ -435,12 +435,17 @@ button{ font-family:inherit; }
   .reveal-right{ transform:translateX(28px); }
   .section-blobs .b1, .section-blobs .b2{ opacity:.16; }
   .utility-contact a:first-child{ display:none; }
-  .nav-links, .nav .btn-primary{ display:none; }
-  .burger{ display:flex; }
-  .nav.menu-open .nav-links{
-    display:flex; position:fixed; inset:116px 0 0 0; height:calc(100vh - 116px);
+  .nav-links{
+    position:fixed; inset:116px 0 0 0; height:calc(100vh - 116px);
     background:#fff; flex-direction:column; justify-content:center; align-items:center; gap:26px;
     z-index:501;
+    opacity:0; transform:translateY(-18px); visibility:hidden; pointer-events:none;
+    transition:opacity .35s var(--ease), transform .35s var(--ease), visibility .35s;
+  }
+  .nav .btn-primary{ display:none; }
+  .burger{ display:flex; }
+  .nav.menu-open .nav-links{
+    opacity:1; transform:translateY(0); visibility:visible; pointer-events:auto;
   }
   .nav.menu-open .nav-links a{ font-size:20px; }
   .hero{ height:auto; min-height:100vh; }
