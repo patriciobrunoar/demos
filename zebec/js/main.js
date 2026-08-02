@@ -24,7 +24,12 @@
   ));
 
   function onParallax() {
-    if (reducedMotion) return;
+    if (reducedMotion || window.innerWidth <= 768) {
+      for (let i = 0; i < parallaxTargets.length; i++) {
+        parallaxTargets[i].style.transform = '';
+      }
+      return;
+    }
     const vh = window.innerHeight;
     for (let i = 0; i < parallaxTargets.length; i++) {
       const el = parallaxTargets[i];
@@ -35,7 +40,7 @@
         const elCenter = rect.top + rect.height / 2;
         const vpCenter = vh / 2;
         const isHero = el.classList.contains('hero-poster') || el.closest('.hero-media');
-        const speed = parseFloat(el.dataset.speed) || (isHero ? 0.22 : 0.12);
+        const speed = parseFloat(el.dataset.speed) || (isHero ? 0.18 : 0.1);
         const translateY = (elCenter - vpCenter) * speed;
         const baseScale = isHero ? 1.05 : 1.15;
         el.style.transform = `translate3d(0, ${translateY.toFixed(1)}px, 0) scale(${baseScale})`;

@@ -428,6 +428,8 @@ address { font-style: normal; }
   .nav-links a { color: rgba(255,255,255,.85) !important; }
   .burger { display: flex; }
   .product-grid, .bento-grid, .events-grid, .video-grid, .contact-channels { grid-template-columns: 1fr; }
+  .about-visual{ order:-1; margin-bottom:24px; }
+  .scroll-cue{ display:none !important; }
   .demo-flag { display: none; }
   .footer-top { grid-template-columns: 1fr; }
   .container { padding: 0 18px; }

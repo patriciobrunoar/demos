@@ -428,7 +428,8 @@ button{ font-family:inherit; }
   .hero-facts{ gap:22px; }
   .tile-grid{ grid-template-columns:1fr; }
   .products-grid .tile:first-child{ grid-column:span 1; min-height:280px; }
-  .cert-inner{ flex-direction:column; text-align:center; }
+  .about-visual{ order:-1; margin-bottom:24px; }
+  .scroll-cue{ display:none !important; }
   .demo-flag{ display:none; }
   .timeline-track{ grid-auto-columns:minmax(130px,1fr); }
   .roster{ columns:1; }

@@ -428,6 +428,8 @@ button{ font-family:inherit; }
   .hero-cta{ gap:22px; }
   .family-grid{ grid-template-columns:1fr; }
   .to-top{ right:16px; bottom:16px; width:46px; height:46px; }
+  .about-visual{ order:-1; margin-bottom:24px; }
+  .scroll-cue{ display:none !important; }
   .demo-flag{ display:none; }
   .nav-cta{ gap:10px; }
   .container{ padding:0 18px; }

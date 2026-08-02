@@ -393,7 +393,8 @@ address{ font-style:normal; }
   .product-grid{ grid-template-columns:1fr; }
   .stat-row{ grid-template-columns:1fr 1fr; }
   .footer-top{ grid-template-columns:1fr; }
-  .to-top{ right:16px; bottom:16px; width:46px; height:46px; }
+  .story-visual{ order:-1; margin-bottom:24px; }
+  .scroll-cue{ display:none !important; }
   .demo-flag{ display:none; }
   .nav-cta{ gap:10px; }
   .container{ padding:0 18px; }
