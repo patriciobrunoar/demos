@@ -73,7 +73,7 @@ address { font-style: normal; }
 
 /* ============ Progress bar & Demo flag ============ */
 .demo-flag {
-  position: fixed; top: 14px; right: -46px; z-index: 999;
+  position: fixed; top: 14px; right: -46px; z-index: 499;
   background: var(--navy); color: var(--gold-mid); font-weight: 700; font-size: 11px;
   letter-spacing: .08em; text-transform: uppercase;
   padding: 6px 52px; transform: rotate(40deg);
@@ -413,12 +413,25 @@ address { font-style: normal; }
   :root { --nav-h: 90px; }
   .nav-links {
     position: fixed; top: var(--nav-h); right: -100%; width: 85%; max-width: 340px; height: calc(100vh - var(--nav-h));
-    background: #fff; flex-direction: column; align-items: flex-start; padding: 40px 32px; gap: 20px;
-    border-left: 1px solid var(--border); box-shadow: -10px 0 30px rgba(0,0,0,.1); transition: right .4s var(--ease);
+    background: rgba(13, 21, 36, 0.97); flex-direction: column; align-items: flex-start; padding: 40px 32px; gap: 20px;
+    border-left: 1px solid rgba(255,255,255,.1); box-shadow: -10px 0 30px rgba(0,0,0,.3); transition: right .4s var(--ease);
+    z-index: 501;
   }
   .nav-links.open { right: 0; }
+  .nav-links a { color: rgba(255,255,255,.85) !important; }
   .burger { display: flex; }
   .product-grid, .bento-grid, .events-grid, .video-grid, .contact-channels { grid-template-columns: 1fr; }
   .demo-flag { display: none; }
   .footer-top { grid-template-columns: 1fr; }
+  .container { padding: 0 18px; }
+  .nav-cta .btn-fill { display: none; }
+}
+
+@media (max-width: 480px) {
+  .hero-cta { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .hero-facts { grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+  .stat-row { grid-template-columns: 1fr 1fr; }
+  .hero-title { font-size: clamp(28px, 7.5vw, 34px); }
+  .event-card { padding: 24px; }
+  .form-box { padding: 24px; }
 }

@@ -51,7 +51,7 @@ section{ position: relative; }
 
 /* ---------- Demo flag & progress ---------- */
 .demo-flag{
-  position: fixed; z-index: 999; bottom: 18px; right: 18px;
+  position: fixed; z-index: 79; bottom: 18px; right: 18px;
   background: var(--ink); color: #fff; font-size: 11px; letter-spacing: .08em;
   text-transform: uppercase; padding: 8px 14px; border-radius: 999px;
   opacity: .8; font-family: 'Open Sans', sans-serif; pointer-events: none;
@@ -442,4 +442,12 @@ section{ position: relative; }
   .hero{ padding-bottom: 130px; }
   .hero-frame{ inset: 80px 16px; }
   .utility-inner{ font-size: 11px; gap: 14px; }
+  .utility-bar{ display:none; }
+  .nav{ top:0; }
+  .container{ padding: 0 18px; }
+  .demo-flag{ display:none; }
+  .news-item{ grid-template-columns:1fr; gap:12px; }
+  .news-arrow{ display:none; }
+  .hero-actions{ flex-direction:column; align-items:flex-start; gap:14px; }
+  .hero-title{ font-size:clamp(38px,10vw,52px); }
 }

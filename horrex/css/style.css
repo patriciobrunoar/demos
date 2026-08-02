@@ -63,7 +63,7 @@ address{ font-style:normal; }
 
 /* ============ progress bar + demo flag ============ */
 .demo-flag{
-  position:fixed; top:14px; right:-46px; z-index:999;
+  position:fixed; top:14px; right:-46px; z-index:499;
   background:var(--ink); color:#fff; font-weight:700; font-size:11px;
   letter-spacing:.08em; text-transform:uppercase;
   padding:6px 52px; transform:rotate(40deg);
@@ -406,6 +406,7 @@ address{ font-style:normal; }
   .nav.menu-open .nav-links{
     display:flex; position:fixed; inset:72px 0 0 0; height:calc(100vh - 72px);
     background:#fff; flex-direction:column; justify-content:center; align-items:center; gap:8px; margin:0;
+    z-index:501;
   }
   .nav.menu-open .nav-links a{ font-size:18px; padding:14px 0; }
   .hero-cta{ gap:20px; }
@@ -414,6 +415,15 @@ address{ font-style:normal; }
   .stat-row{ grid-template-columns:1fr 1fr; }
   .footer-top{ grid-template-columns:1fr; }
   .to-top{ right:16px; bottom:16px; width:46px; height:46px; }
-  .demo-flag{ font-size:8px; padding:4px 40px; top:8px; right:-46px; }
+  .demo-flag{ display:none; }
   .nav-cta{ gap:10px; }
+  .container{ padding:0 18px; }
+}
+
+@media (max-width:480px){
+  .hero-cta{ flex-direction:column; align-items:flex-start; gap:16px; }
+  .hero-title{ font-size:clamp(30px,7.5vw,36px); }
+  .marine-grid{ gap:32px; }
+  .contact-grid{ gap:40px; }
+  .product-card{ padding:24px 20px; }
 }
