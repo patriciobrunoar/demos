@@ -47,12 +47,7 @@
   ));
 
   function onParallax() {
-    if (reducedMotion || window.innerWidth <= 768) {
-      for (let i = 0; i < parallaxTargets.length; i++) {
-        parallaxTargets[i].style.transform = '';
-      }
-      return;
-    }
+    if (reducedMotion) return;
     const vh = window.innerHeight;
     for (let i = 0; i < parallaxTargets.length; i++) {
       const el = parallaxTargets[i];

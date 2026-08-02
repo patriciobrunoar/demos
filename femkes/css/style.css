@@ -389,12 +389,9 @@ address{ font-style:normal; }
     opacity:1; transform:translateY(0); visibility:visible; pointer-events:auto;
   }
   .nav.menu-open .nav-links a{ font-size:18px; padding:14px 0; }
-  .hero-cta{ gap:20px; }
-  .product-grid{ grid-template-columns:1fr; }
-  .stat-row{ grid-template-columns:1fr 1fr; }
-  .footer-top{ grid-template-columns:1fr; }
-  .story-visual{ order:-1; margin-bottom:24px; }
-  .scroll-cue{ display:none !important; }
+  .hero-inner{ padding-top:20px; padding-bottom:140px; }
+  .scroll-cue{ position:absolute; bottom:14px; left:50%; transform:translateX(-50%) scale(0.85); z-index:4; display:block; }
+  .story-visual{ order:-1; margin-bottom:28px; }
   .demo-flag{ display:none; }
   .nav-cta{ gap:10px; }
   .container{ padding:0 18px; }
