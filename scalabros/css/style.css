@@ -423,8 +423,8 @@ button{ font-family:inherit; }
     opacity:1; transform:translateY(0); visibility:visible; pointer-events:auto;
   }
   .nav.menu-open .nav-links a{ font-size:20px; }
-  .hero{ min-height:100vh; height:auto; padding-top:calc(var(--nav-h) + 36px); padding-bottom:120px; }
-  .hero-inner{ padding-top:20px; padding-bottom:40px; }
+  .hero{ min-height:100vh; height:auto; padding-top:var(--nav-h); padding-bottom:80px; align-items:flex-start; }
+  .hero-inner{ padding-top:30px; padding-bottom:40px; }
   .scroll-cue{ position:absolute; bottom:20px; left:50%; transform:translateX(-50%) scale(0.85); z-index:4; display:block; }
   .hero-facts{ gap:22px; }
   .tile-grid{ grid-template-columns:1fr; }
@@ -432,8 +432,9 @@ button{ font-family:inherit; }
   .about-visual{ order:-1; margin-bottom:16px; position:relative; z-index:1; }
   .about-copy{ position:relative; z-index:2; }
   .demo-flag{ display:none; }
-  .timeline{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin-left:-18px; margin-right:-18px; padding-left:18px; padding-right:18px; }
-  .timeline-track{ grid-auto-columns:minmax(130px,1fr); min-width:max-content; }
+  .timeline{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin-left:-18px; margin-right:-18px; padding:0 18px 12px; margin-top:60px; }
+  .timeline-track{ display:flex; gap:0; min-width:max-content; }
+  .timeline-track .tl-step{ min-width:130px; flex-shrink:0; }
   .roster{ columns:1; }
   .team-banner{ height:42vh; }
   .container{ padding:0 18px; }
