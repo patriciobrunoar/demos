@@ -204,7 +204,7 @@ button{ font-family:inherit; }
     linear-gradient(90deg, rgba(4,16,16,.55) 0%, rgba(4,16,16,.1) 60%);
 }
 
-.hero-inner{ position:relative; z-index:2; padding-top:calc(var(--nav-h) + 20px); padding-bottom:60px; width:100%; }
+.hero-inner{ position:relative; z-index:2; padding-top:20px; padding-bottom:60px; width:100%; }
 .hero-title{ font-size:clamp(40px,6.2vw,76px); max-width:820px; color:#fff; }
 .hero .eyebrow{ color:var(--amber); }
 .hero-sub{ max-width:540px; font-size:18px; margin-top:20px; color:rgba(255,255,255,.88); }
