@@ -189,7 +189,7 @@ button{ font-family:inherit; }
 .burger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
 /* ============ hero ============ */
-.hero{ position:relative; min-height:100vh; height:100vh; display:flex; flex-direction:column; justify-content:flex-end; padding-top:var(--nav-h); overflow:hidden; background:var(--navy); }
+.hero{ position:relative; min-height:680px; max-height:880px; height:clamp(680px, 90vh, 880px); display:flex; flex-direction:column; justify-content:flex-end; padding-top:var(--nav-h); overflow:hidden; background:var(--navy); }
 .hero-media{ position:absolute; inset:0; z-index:0; overflow:hidden; }
 .hero-slide{
   position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
@@ -200,33 +200,34 @@ button{ font-family:inherit; }
 .hero-media-overlay{
   position:absolute; inset:0; z-index:2;
   background:
-    linear-gradient(0deg, rgba(9,15,32,.92) 0%, rgba(9,15,32,.55) 42%, rgba(9,15,32,.25) 70%, rgba(9,15,32,.45) 100%),
-    linear-gradient(90deg, rgba(9,15,32,.55) 0%, rgba(9,15,32,.1) 55%);
+    linear-gradient(0deg, rgba(9,15,32,.78) 0%, rgba(9,15,32,.35) 50%, rgba(9,15,32,.5) 100%),
+    linear-gradient(90deg, rgba(9,15,32,.55) 0%, rgba(9,15,32,.15) 60%);
 }
 @keyframes kenburns{ from{ transform:scale(1); } to{ transform:scale(1.1); } }
 
-.hero-inner{ position:relative; z-index:3; padding-top:20px; padding-bottom:120px; }
-.hero-title{ font-size:clamp(38px,6.4vw,76px); max-width:820px; color:#fff; }
+.hero-inner{ position:relative; z-index:3; padding-top:20px; padding-bottom:80px; }
+.hero-title{ font-size:clamp(38px,5.8vw,72px); max-width:820px; color:#fff; }
+.hero-title .accent-text{ color:#8cb2ff; text-shadow: 0 0 30px rgba(140,178,255,0.4); }
 .hero .eyebrow{ color:var(--sky); }
 .hero .eyebrow .dot{ background:var(--sky); box-shadow:0 0 0 4px rgba(111,147,214,.25); }
-.hero-sub{ max-width:560px; font-size:18px; margin-top:22px; color:rgba(255,255,255,.82); }
+.hero-sub{ max-width:560px; font-size:18px; margin-top:22px; color:rgba(255,255,255,.88); }
 .hero-cta{ display:flex; gap:16px; margin-top:38px; flex-wrap:wrap; }
-.btn-ghost-light{ background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.35); backdrop-filter:blur(6px); }
-.btn-ghost-light:hover{ background:rgba(255,255,255,.16); border-color:#fff; }
+.btn-ghost-light{ background:rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.35); backdrop-filter:blur(6px); }
+.btn-ghost-light:hover{ background:rgba(255,255,255,.2); border-color:#fff; }
 
 .hero-chips{ position:absolute; z-index:3; inset:0; pointer-events:none; }
 .chip{
-  position:absolute; display:flex; flex-direction:column; gap:2px; padding:16px 20px;
-  border-radius:var(--radius-sm); background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.22);
-  backdrop-filter:blur(10px); animation:float 6s ease-in-out infinite;
+  position:absolute; display:flex; flex-direction:column; gap:2px; padding:14px 18px;
+  border-radius:var(--radius-sm); background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25);
+  backdrop-filter:blur(12px); animation:float 6s ease-in-out infinite; box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
-.chip strong{ font-family:'Space Grotesk',sans-serif; font-size:20px; color:#fff; }
-.chip span{ font-size:12px; color:rgba(255,255,255,.7); text-transform:uppercase; letter-spacing:.06em; }
-.chip-1{ right:8%; top:26%; animation-delay:0s; }
-.chip-2{ right:16%; bottom:30%; animation-delay:1.2s; }
-.chip-3{ right:2%; bottom:52%; animation-delay:2.4s; }
+.chip strong{ font-family:'Space Grotesk',sans-serif; font-size:18px; color:#fff; }
+.chip span{ font-size:11px; color:rgba(255,255,255,.8); text-transform:uppercase; letter-spacing:.06em; }
+.chip-1{ right:6%; top:22%; animation-delay:0s; }
+.chip-2{ right:12%; bottom:24%; animation-delay:1.2s; }
+.chip-3{ right:2%; bottom:46%; animation-delay:2.4s; }
 
-.scroll-cue{ position:absolute; bottom:32px; left:50%; transform:translateX(-50%); z-index:3; width:26px; height:42px; border:1.5px solid rgba(255,255,255,.4); border-radius:100px; }
+.scroll-cue{ position:absolute; bottom:24px; left:50%; transform:translateX(-50%); z-index:3; width:26px; height:42px; border:1.5px solid rgba(255,255,255,.4); border-radius:100px; }
 .scroll-cue span{ position:absolute; top:8px; left:50%; transform:translateX(-50%); width:4px; height:8px; border-radius:2px; background:#fff; animation:scrollcue 1.8s ease-in-out infinite; }
 
 @keyframes float{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-14px); } }
