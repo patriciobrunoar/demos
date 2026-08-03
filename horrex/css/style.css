@@ -206,7 +206,7 @@ address{ font-style:normal; }
 .burger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
 /* ============ hero ============ */
-.hero{ position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden; background:var(--navy-deep); }
+.hero{ position:relative; min-height:680px; max-height:880px; height:clamp(680px, 90vh, 880px); display:flex; align-items:center; overflow:hidden; background:var(--navy-deep); }
 .hero-media{ position:absolute; inset:0; z-index:0; overflow:hidden; }
 .hero-bg{
   position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
@@ -224,19 +224,19 @@ address{ font-style:normal; }
 .hero-media-overlay{
   position:absolute; inset:0; z-index:1;
   background:
-    linear-gradient(0deg, rgba(4,12,20,.96) 0%, rgba(4,12,20,.8) 40%, rgba(4,12,20,.62) 68%, rgba(4,12,20,.85) 100%),
-    linear-gradient(100deg, rgba(4,12,20,.7) 0%, rgba(4,12,20,.25) 55%);
+    linear-gradient(0deg, rgba(4,12,20,.72) 0%, rgba(4,12,20,.35) 45%, rgba(4,12,20,.5) 100%),
+    linear-gradient(100deg, rgba(4,12,20,.55) 0%, rgba(4,12,20,.15) 60%);
 }
 
-.hero-inner{ position:relative; z-index:2; padding:calc(var(--nav-h) + 40px) 0 170px; width:100%; }
+.hero-inner{ position:relative; z-index:2; padding:calc(var(--nav-h) + 20px) 0 80px; width:100%; }
 .hero-title{ font-size:clamp(36px,6vw,68px); max-width:920px; color:#fff; }
-.hero-title strong{ color:var(--lime); }
-.hero .eyebrow{ color:rgba(255,255,255,.85); }
-.hero .eyebrow::before{ background:var(--lime); }
-.hero-sub{ max-width:540px; font-size:17px; margin-top:22px; color:rgba(255,255,255,.78); text-transform:none; }
+.hero-title strong{ color:#d7fc3d; text-shadow:0 0 30px rgba(215,252,61,0.4); }
+.hero .eyebrow{ color:rgba(255,255,255,.9); }
+.hero .eyebrow::before{ background:#d7fc3d; }
+.hero-sub{ max-width:540px; font-size:17px; margin-top:22px; color:rgba(255,255,255,.88); text-transform:none; }
 .hero-cta{ display:flex; align-items:center; gap:26px; margin-top:44px; flex-wrap:wrap; }
 
-.scroll-cue{ position:absolute; z-index:2; bottom:36px; left:50%; transform:translateX(-50%); width:26px; height:42px; border:1.5px solid rgba(255,255,255,.4); border-radius:100px; }
+.scroll-cue{ position:absolute; z-index:2; bottom:24px; left:50%; transform:translateX(-50%); width:26px; height:42px; border:1.5px solid rgba(255,255,255,.4); border-radius:100px; }
 .scroll-cue span{ position:absolute; top:8px; left:50%; transform:translateX(-50%); width:4px; height:8px; border-radius:2px; background:var(--lime); animation:scrollcue 1.8s ease-in-out infinite; }
 @keyframes scrollcue{ 0%{ opacity:1; transform:translate(-50%,0);} 70%{ opacity:0; transform:translate(-50%,16px);} 100%{opacity:0;} }
 

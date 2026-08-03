@@ -210,19 +210,58 @@ button{ font-family:inherit; }
 .burger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
 /* ============ hero — animated wave/gradient (upgrades to real photo automatically) ============ */
-.hero{ position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden; background:var(--teal-deep); }
+.hero{ position:relative; min-height:680px; max-height:880px; height:clamp(680px, 90vh, 880px); display:flex; align-items:center; overflow:hidden; background:var(--teal-deep); }
 .hero-media{ position:absolute; inset:0; z-index:0; overflow:hidden; }
-.hero-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.hero-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; animation:kenburns 34s ease-in-out infinite alternate; }
+.hero-media video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.hero-media.no-media{ background:
+    radial-gradient(1100px 700px at 15% 20%, rgba(6,128,163,.55), transparent 60%),
+    radial-gradient(900px 600px at 85% 75%, rgba(243,146,0,.28), transparent 55%),
+    linear-gradient(155deg, var(--teal-deep), var(--teal-dark) 55%, var(--teal) 130%);
+}
+.hero-media-overlay{
+  position:absolute; inset:0; z-index:1;
+  background:
+    linear-gradient(0deg, rgba(0,12,16,.75) 0%, rgba(0,12,16,.35) 45%, rgba(0,12,16,.5) 100%),
+    linear-gradient(100deg, rgba(0,12,16,.55) 0%, rgba(0,12,16,.15) 60%);
+}
+.hero-shimmer{ position:absolute; inset:0; z-index:1; overflow:hidden; pointer-events:none; }
+.hero-shimmer::after{
+  content:''; position:absolute; top:-20%; left:-40%; width:32%; height:140%;
+  background:linear-gradient(75deg, transparent, rgba(255,255,255,.07), transparent);
+  animation:hero-shine 10s ease-in-out infinite;
+}
+@keyframes hero-shine{ 0%{ left:-40%; } 45%,100%{ left:130%; } }
 
-.hero-inner{ position:relative; z-index:2; padding:calc(var(--nav-h) + 40px) 0 190px; width:100%; }
-.hero-title{ font-size:clamp(38px,6vw,72px); max-width:920px; color:#fff; font-weight:100; }
-.hero-title strong{ font-weight:600; color:var(--orange); }
-.hero .eyebrow{ color:rgba(255,255,255,.85); }
-.hero .eyebrow::before{ background:var(--orange); }
-.hero-sub{ max-width:540px; font-size:17px; margin-top:22px; color:rgba(255,255,255,.78); }
+.hero-bubbles{ position:absolute; inset:0; z-index:1; overflow:hidden; pointer-events:none; }
+.hero-bubbles span{
+  position:absolute; bottom:-40px; width:var(--size); height:var(--size); border-radius:50%;
+  background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.26);
+  animation:bubble-rise var(--dur) ease-in infinite; animation-delay:var(--delay);
+}
+@keyframes bubble-rise{
+  0%{ transform:translate(0,0); opacity:0; }
+  12%{ opacity:.7; }
+  88%{ opacity:.35; }
+  100%{ transform:translate(16px,-640px); opacity:0; }
+}
+.hero-waves{ position:absolute; left:0; right:0; bottom:-2px; z-index:1; width:100%; line-height:0; }
+.hero-waves svg{ width:100%; height:auto; display:block; }
+.hero-waves .w1{ fill:rgba(255,255,255,.06); animation:wave-drift 22s linear infinite; }
+.hero-waves .w2{ fill:rgba(255,255,255,.1); animation:wave-drift 16s linear infinite reverse; }
+.hero-waves .w3{ fill:var(--bg); }
+@keyframes wave-drift{ from{ transform:translateX(0); } to{ transform:translateX(-25%); } }
+@keyframes kenburns{ from{ transform:scale(1); } to{ transform:scale(1.1); } }
+
+.hero-inner{ position:relative; z-index:2; padding:calc(var(--nav-h) + 20px) 0 100px; width:100%; }
+.hero-title{ font-size:clamp(38px,6vw,72px); max-width:920px; color:#fff; font-weight:350; letter-spacing: -0.01em; }
+.hero-title strong{ font-weight:700; color:#ff9d1a; text-shadow:0 0 30px rgba(255,157,26,0.4); }
+.hero .eyebrow{ color:rgba(255,255,255,.9); }
+.hero .eyebrow::before{ background:#ff9d1a; }
+.hero-sub{ max-width:540px; font-size:17px; margin-top:22px; color:rgba(255,255,255,.88); }
 .hero-cta{ display:flex; align-items:center; gap:30px; margin-top:40px; flex-wrap:wrap; }
 
-.scroll-cue{ position:absolute; z-index:2; bottom:36px; left:50%; transform:translateX(-50%); width:26px; height:42px; border:1.5px solid rgba(255,255,255,.4); border-radius:100px; }
+.scroll-cue{ position:absolute; z-index:2; bottom:24px; left:50%; transform:translateX(-50%); width:26px; height:42px; border:1.5px solid rgba(255,255,255,.4); border-radius:100px; }
 .scroll-cue span{ position:absolute; top:8px; left:50%; transform:translateX(-50%); width:4px; height:8px; border-radius:2px; background:var(--orange); animation:scrollcue 1.8s ease-in-out infinite; }
 @keyframes scrollcue{ 0%{ opacity:1; transform:translate(-50%,0);} 70%{ opacity:0; transform:translate(-50%,16px);} 100%{opacity:0;} }
 
