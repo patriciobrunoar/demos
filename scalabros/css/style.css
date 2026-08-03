@@ -193,7 +193,7 @@ button{ font-family:inherit; }
 .burger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
 /* ============ hero (full-bleed panoramic photo) ============ */
-.hero{ position:relative; min-height:680px; max-height:880px; height:clamp(680px, 90vh, 880px); display:flex; align-items:flex-end; overflow:hidden; background:var(--ink); }
+.hero{ position:relative; min-height:680px; max-height:880px; height:clamp(680px, 90vh, 880px); display:flex; align-items:flex-end; overflow:hidden; background:var(--ink); padding-top:var(--nav-h); }
 .hero-media{ position:absolute; inset:0; z-index:0; overflow:hidden; }
 .hero-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .hero-media.no-media{ background:linear-gradient(150deg,var(--ink),var(--teal-dark)); }
@@ -423,8 +423,8 @@ button{ font-family:inherit; }
     opacity:1; transform:translateY(0); visibility:visible; pointer-events:auto;
   }
   .nav.menu-open .nav-links a{ font-size:20px; }
-  .hero{ min-height:100vh; height:auto; padding-top:var(--nav-h); padding-bottom:80px; align-items:flex-start; }
-  .hero-inner{ padding-top:30px; padding-bottom:40px; }
+  .hero{ min-height:100vh; height:auto; padding-top:0; padding-bottom:80px; align-items:flex-start; }
+  .hero-inner{ padding-top:calc(var(--nav-h) + 24px); padding-bottom:40px; }
   .scroll-cue{ position:absolute; bottom:20px; left:50%; transform:translateX(-50%) scale(0.85); z-index:4; display:block; }
   .hero-facts{ gap:22px; }
   .tile-grid{ grid-template-columns:1fr; }
@@ -432,9 +432,13 @@ button{ font-family:inherit; }
   .about-visual{ order:-1; margin-bottom:16px; position:relative; z-index:1; }
   .about-copy{ position:relative; z-index:2; }
   .demo-flag{ display:none; }
-  .timeline{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin-left:-18px; margin-right:-18px; padding:0 18px 12px; margin-top:60px; }
-  .timeline-track{ display:flex; gap:0; min-width:max-content; }
-  .timeline-track .tl-step{ min-width:130px; flex-shrink:0; }
+  .timeline{ overflow:visible; margin-top:50px; margin-left:0; margin-right:0; padding:0; }
+  .timeline-track{ display:flex; flex-direction:column; gap:0; min-width:0; }
+  .timeline-track::before{ display:none; }
+  .timeline-track .tl-step{ display:grid; grid-template-columns:auto 1fr; gap:12px; align-items:center; text-align:left; padding:16px 0; border-bottom:1px solid var(--border); min-width:0; }
+  .timeline-track .tl-step::before{ position:static; transform:rotate(45deg); width:10px; height:10px; }
+  .timeline-track .tl-step .tl-year{ display:inline; }
+  .timeline-track .tl-step .tl-label{ display:inline; margin-top:0; padding:0; }
   .roster{ columns:1; }
   .team-banner{ height:42vh; }
   .container{ padding:0 18px; }
