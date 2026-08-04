@@ -372,6 +372,10 @@ address{ font-style:normal; }
 
 @media (max-width:760px){
   :root{ --nav-h:88px; }
+  .product-grid{ grid-template-columns:1fr; gap:20px; }
+  .product-photo{ aspect-ratio:16/10; }
+  .product-body{ padding:22px 20px 24px; }
+  .footer-top{ grid-template-columns:1fr; gap:28px; }
   .logo-img{ height:68px; }
   .nav.scrolled{ height:72px; }
   .reveal-left, .reveal-right{ transform:translateY(18px) !important; }
