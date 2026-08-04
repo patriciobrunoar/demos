@@ -97,7 +97,9 @@
           },
           onStateChange(e) {
             if (e.data === YT.PlayerState.PLAYING) {
-              heroVideoWrap.classList.add('is-loaded');
+              setTimeout(() => {
+                heroVideoWrap.classList.add('is-loaded');
+              }, 1200);
             } else if (e.data === YT.PlayerState.ENDED) {
               e.target.seekTo(0);
               e.target.playVideo();
