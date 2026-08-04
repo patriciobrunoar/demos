@@ -56,7 +56,7 @@
 
   /* ---------- Parallax (rAF throttled) ---------- */
   const parallaxTargets = Array.from(document.querySelectorAll(
-    '.hero-media img, .hero-bg, .about-visual img, .panel-media img, .collection-visual img, .cta-media img, [data-speed], [data-parallax]'
+    '.hero-media img, .hero-bg, .about-visual img, .panel-media img, .collection-visual img, .cta-media img, img[data-speed], img[data-parallax]'
   ));
 
   function onParallax() {
