@@ -156,12 +156,16 @@ section{ position: relative; }
 .hero-poster{
   position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover;
 }
-.hero-video-wrap{ position: absolute; inset: 0; z-index: 1; overflow: hidden; pointer-events: none; }
+.hero-video-wrap{
+  position: absolute; inset: 0; z-index: 1; overflow: hidden; pointer-events: none;
+  opacity: 0; transition: opacity .8s var(--ease);
+}
+.hero-video-wrap.is-loaded{ opacity: 1; }
 .hero-video-wrap iframe{
   position: absolute; top: 50%; left: 50%; border: 0; pointer-events: none;
   width: 177.78vh; height: 56.25vw; /* forces 16:9 to always cover the box, like object-fit: cover */
   min-width: 100%; min-height: 100%;
-  transform: translate(-50%, -50%) scale(1.24); /* crop past the YouTube UI chrome at the edges */
+  transform: translate(-50%, -50%) scale(1.4); /* crop past the YouTube UI chrome at the edges */
 }
 @media (prefers-reduced-motion: reduce){ .hero-video-wrap{ display: none; } }
 .hero-media-overlay{

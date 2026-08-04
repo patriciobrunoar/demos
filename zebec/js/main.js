@@ -69,7 +69,8 @@
 
   /* ---------- Hero background video (YouTube IFrame Player API) ---------- */
   const heroVideoEl = document.getElementById('heroVideo');
-  if (heroVideoEl && !reducedMotion) {
+  const heroVideoWrap = document.getElementById('heroVideoWrap');
+  if (heroVideoEl && heroVideoWrap && !reducedMotion) {
     const videoId = heroVideoEl.dataset.videoId;
 
     window.onYouTubeIframeAPIReady = function () {
@@ -94,10 +95,10 @@
             e.target.mute();
             e.target.playVideo();
           },
-          // Belt-and-braces loop: if the playlist-loop trick doesn't kick in,
-          // force a restart instead of leaving YouTube's end-screen/controls visible.
           onStateChange(e) {
-            if (e.data === YT.PlayerState.ENDED) {
+            if (e.data === YT.PlayerState.PLAYING) {
+              heroVideoWrap.classList.add('is-loaded');
+            } else if (e.data === YT.PlayerState.ENDED) {
               e.target.seekTo(0);
               e.target.playVideo();
             }
