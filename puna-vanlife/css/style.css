@@ -413,6 +413,12 @@ address { font-style: normal; }
 
 @media (max-width: 768px) {
   :root { --nav-h: 90px; }
+  .product-grid, .bento-grid, .events-grid { grid-template-columns: 1fr; gap: 20px; }
+  .bento-card.wide { grid-column: span 1; }
+  .video-grid, .contact-channels { grid-template-columns: 1fr; gap: 16px; }
+  .product-card .product-body { padding: 22px 20px 24px; }
+  .bento-card { padding: 28px 22px; }
+  .event-card { padding: 26px 22px; }
   .nav-links {
     position: fixed; top: var(--nav-h); left: 0; right: 0; height: calc(100vh - var(--nav-h));
     background: rgba(13, 21, 36, 0.97); flex-direction: column; align-items: center; justify-content: center; padding: 40px 32px; gap: 20px;
